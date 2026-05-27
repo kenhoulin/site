@@ -1,6 +1,10 @@
-# Teaching
-# - course, level (undergraduate/graduate), institution, years
-- course: "[Course name]"
-  level: graduate
-  institution: University of Texas at Austin
-  years: "[Years]"
+- institution: University of Texas at Austin
+  graduate:
+    - "Income Inequality"
+    - "Population Research Center Graduate Training Seminar"
+    - "Regression Analysis and Causal Inference"
+    - "Structure of Organizations (Human Dimensions of Organization)"
+  undergraduate:
+    - "Social Inequality"
+    - "Introduction to Social Statistics"
+    - "Two to Tango: Sociology of Relationships (Signature Course)"

@@ -1,11 +1,9 @@
-# Education
-# Format: degree, institution, year (+ optional note)
 - degree: Ph.D., Sociology
-  institution: "[Institution]"
-  year: "[Year]"
-- degree: M.A., [Field]
-  institution: "[Institution]"
-  year: "[Year]"
-- degree: B.A., [Field]
-  institution: "[Institution]"
-  year: "[Year]"
+  institution: University of Massachusetts–Amherst
+  year: 2013
+- degree: M.A., Sociology
+  institution: University of Massachusetts–Amherst
+  year: 2012
+- degree: B.A., Sociology
+  institution: National Taiwan University
+  year: 2005

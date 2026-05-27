@@ -1,5 +1,170 @@
-# Service
-# - role, org, years
-- role: "[Role]"
-  org: "[Organization or journal]"
-  years: "[Years]"
+editorial:
+  - role: Editor-in-Charge
+    org: Socio-Economic Review
+    years: "2021–present"
+  - role: Deputy Editor
+    org: Demography
+    years: "2019–2022"
+  - role: Editorial Board Member
+    org: Social Forces
+    years: "2023–2027"
+  - role: Editorial Board Member
+    org: American Sociological Review
+    years: "2022–2024"
+  - role: Consulting Editorial Board Member
+    org: American Journal of Sociology
+    years: "2018–2020"
+  - role: Editorial Board Member
+    org: Social Forces
+    years: "2018–2022"
+  - role: Editorial Board Member
+    org: American Sociological Review
+    years: "2017–2019"
+  - role: Editorial Board Member
+    org: Social Currents
+    years: "2015–2022"
+
+reviewer:
+  journals:
+    - American Sociological Review
+    - American Journal of Sociology
+    - Organization Science
+    - Social Forces
+    - Social Problems
+    - Socio-Economic Review
+    - Research in Social Stratification and Mobility
+    - Journal of Marriage and Family
+    - European Sociological Review
+    - Social Science Research
+    - Sociology of Development
+    - PNAS
+    - Sociological Methods and Research
+    - Sociology of Race and Ethnicity
+    - Regulation and Governance
+    - Social Currents
+    - Sociological Forum
+    - Work and Occupations
+    - Research in the Sociology of Work
+    - Time-Sharing Experiments for the Social Sciences
+    - Theory and Social Inquiry
+  grant_agencies:
+    - National Science Foundation
+    - European Research Council
+    - Dutch Research Council
+    - Social Sciences and Humanities Research Council of Canada
+    - National Research Development and Innovation Office of Hungary
+    - The Russell Sage Foundation
+  tenure_promotion:
+    - Colorado State University
+    - Columbia University
+
+professional_associations:
+  - role: Council Member, Organization, Occupation, and Work Section
+    org: American Sociological Association
+    years: "2022–2025"
+  - role: Past Chair, Economic Sociology Section
+    org: American Sociological Association
+    years: "2024–2025"
+  - role: Chair, Economic Sociology Section
+    org: American Sociological Association
+    years: "2023–2024"
+  - role: Chair-Elect, Economic Sociology Section
+    org: American Sociological Association
+    years: "2022–2023"
+  - role: Nominating Committee Member
+    org: American Sociological Association
+    years: "2021–2022"
+  - role: "Chair, Rosabeth Moss Kanter Distinguished Career Award Committee, Organization, Occupation, and Work Section"
+    org: American Sociological Association
+    years: "2024–2025"
+  - role: "Committee Member, Program Committee for the 2025 ASA Annual Meeting"
+    org: American Sociological Association
+    years: "2023–2025"
+  - role: "Chair, Program Committee, Economic Sociology Section"
+    org: American Sociological Association
+    years: "2023–2024"
+  - role: "Chair, James D. Thompson Graduate Student Paper Award, Organization, Occupation, and Work Section"
+    org: American Sociological Association
+    years: "2023–2024"
+  - role: "Program Committee Co-Chair, Organization, Occupation, and Work Section, 2019 Annual Meeting"
+    org: American Sociological Association
+    years: "2018–2019"
+  - role: "Editor, Work in Progress blog"
+    org: American Sociological Association
+    years: "2016–2017"
+  - role: "Chair, Education, Work and Economic Inequality Area Committee"
+    org: Population Association of America
+    years: "2023–2024"
+
+university:
+  university_wide:
+    - role: Quantitative Reasoning Flag Committee
+      years: "2021–2024"
+    - role: Robert W. Hamilton Book Author Awards Committee
+      years: "2022"
+    - role: University Graduate Continuing Fellowship Selection Committee
+      years: "2018"
+  college_wide:
+    - role: "Member, Social and Behavioral Statistical and Data Sciences (SBSDS) Hub Director Search Committee"
+      years: "2023–2024"
+    - role: Strategic Planning Steering Committee
+      years: "2022–2025"
+    - role: FRA and SRA Review Committee
+      years: "2021–2022"
+  departmental:
+    - role: Member, Executive Committee
+      years: "2025–2027"
+    - role: Associate Departmental Chair & Director of Undergraduate Studies
+      years: "2022–2025"
+    - role: Acting Departmental Chair
+      years: "2024"
+    - role: Chair, Faculty Search Committee
+      years: "2021–2022"
+    - role: Member, Faculty Search Committee
+      years: "2022–2023"
+    - role: Area Coordinator, Organization, Occupation, and Work
+      years: "2016–2021"
+    - role: Organizer, Job Market Workshop
+      years: "2019–2021"
+    - role: Member, Climate Advisory Committee
+      years: "2019–2020"
+
+advising:
+  dissertation_chair:
+    - name: Inbar Weiss
+      years: "2018–2022"
+      role: Co-Chair
+    - name: Aida Villanueva
+      years: "2018–2020"
+      role: Co-Chair
+  dissertation_committee:
+    - name: Sercan Tas
+      years: "2024–present"
+    - name: Annie Murphy
+      years: "2023–2025"
+    - name: Jake Burchard (University of Chicago)
+      years: "2022–2025"
+    - name: Andrew Messamore
+      years: "2021–2024"
+    - name: Patrick Sheehan
+      years: "2020–2023"
+    - name: Koit Hung
+      years: "2020–2023"
+    - name: Carolina Aragão
+      years: "2020–2022"
+    - name: Shih-Yi Chao
+      years: "2017–2019"
+    - name: Amanda Bosky
+      years: "2017–2019"
+    - name: Katherine Hill
+      years: "2017–2021"
+    - name: Paige Gabriel
+      years: "2016–2017"
+    - name: Shantel Buggs
+      years: "2014–2017"
+    - name: Megan Tobias Neely
+      years: "2014–2017"
+    - name: Robert Sitko
+      years: "2013–2016"
+    - name: April Sutton
+      years: "2013–2015"

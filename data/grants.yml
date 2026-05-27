@@ -1,7 +1,65 @@
-# Grants & Fellowships
-# - title, funder, amount (optional), years, role (PI/Co-PI)
-- title: "[Grant title]"
-  funder: "[Agency]"
-  amount: "$[Amount]"
-  years: "[Years]"
-  role: PI
+- title: "Economic Mobility Impact Evaluation"
+  role: Principal Investigator
+  funder: The City of Austin
+  amount: "$120,000"
+  years: "2025–2027"
+
+- title: "Employment Mobility and the Segmentation of the French Labor Market"
+  role: Principal Investigator
+  funder: Texas Global Faculty Research Seed Grant
+  amount: "$10,000"
+  years: "2022"
+
+- title: Littlefield and Ransom Faculty Fellows
+  role: Principal Investigator
+  funder: University of Texas at Austin
+  amount: "$19,000"
+  years: "2022"
+
+- title: "Comparing Taiwanese Immigrants in the Traditional and New Destinations"
+  role: Principal Investigator
+  funder: Center for Taiwan Studies
+  amount: "$10,000"
+  years: "2021–2022"
+
+- title: "Understanding the Relationship between Employment Context and Job Quality"
+  role: Principal Investigator
+  funder: "Bill and Melinda Gates Foundation (INV-005031)"
+  amount: "$119,799"
+  years: "2020–2021"
+
+- title: "Building a Tribe in a Finance Desert: Can Government Step in Where Banks do not?"
+  role: "Co-Principal Investigator (PI: Rachel Wellhausen)"
+  funder: University of Texas at Austin
+  amount: "$100,000"
+  years: "2018–2019"
+
+- title: "Examining College Students' Attitudes About Guns to Develop Lessons for Intervention"
+  role: "Co-Principal Investigator (PI: Harel Shapira)"
+  funder: Joyce Foundation
+  amount: "$316,181"
+  years: "2018–2019"
+
+- title: "The Social and Organizational Determinants of Employment-Based Health Insurance"
+  role: Principal Investigator
+  funder: "Agency for Healthcare Research and Quality (1 R03 HS024102-01)"
+  amount: "$99,951"
+  years: "2014–2017"
+
+- title: Texas Census Research Data Center Proposal Development Grant
+  role: Principal Investigator
+  funder: Texas Census Research Data Center
+  amount: "$6,000"
+  years: "2014–2017"
+
+- title: "Does Financialization Contribute to Growing Income Inequality?"
+  role: "Co-Principal Investigator (PI: Donald Tomaskovic-Devey)"
+  funder: "Institute for New Economic Thinking & The Centre for International Governance Innovation (#INO1300009)"
+  amount: "$119,320"
+  years: "2013–2015"
+
+- title: "Interracial Romantic Relationships among Internet Daters: The Unexamined Role of Gender and Sexual Orientation"
+  role: "Co-Principal Investigator (PI: Jennifer Lundquist)"
+  funder: "University of Massachusetts–Amherst"
+  amount: "$14,550"
+  years: "2010"

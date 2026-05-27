@@ -8,82 +8,190 @@ format:
     toc: false
 ---
 
-```{r}
-#| echo: false
-#| message: false
-# Auto-set last-updated date
-last_updated <- format(Sys.Date(), "%B %Y")
+```{r setup, include=FALSE}
+library(yaml)
+
+edu      <- yaml::read_yaml("data/education.yml")
+appts    <- yaml::read_yaml("data/appointments.yml")
+grants   <- yaml::read_yaml("data/grants.yml")
+awards   <- yaml::read_yaml("data/awards.yml")
+talks    <- yaml::read_yaml("data/talks.yml")
+teaching <- yaml::read_yaml("data/teaching.yml")[[1]]
+service  <- yaml::read_yaml("data/service.yml")
+pubs     <- read.csv("publications.csv", stringsAsFactors = FALSE, na.strings = c("", "NA"))
+
+# Helper: emit raw HTML/markdown
+cat_md <- function(...) knitr::asis_output(paste0(..., collapse = "\n"))
+
+# Helper: year label (handles both 'year' and 'years' keys)
+yr <- function(x) if (!is.null(x$years)) x$years else as.character(x$year)
 ```
 
 ::: {.content-visible when-format="html"}
-**Last updated:** `r last_updated` &nbsp;&nbsp; [Download PDF](cv.pdf){.btn .btn-outline-secondary .btn-sm}
+**Last updated:** `r format(Sys.Date(), "%B %Y")` &nbsp;&nbsp;
+[Download PDF](cv.pdf){.btn .btn-outline-secondary .btn-sm}
 :::
 
 ---
 
-## Ken-Hou Lin
+**Ken-Hou Lin**
 
-Professor of Sociology · University of Texas at Austin
-[kenhoulin@utexas.edu](mailto:kenhoulin@utexas.edu)
+Professor of Sociology · University of Texas at Austin ·
+[lin\@austin.utexas.edu](mailto:lin@austin.utexas.edu) ·
+[kenhoulin.info](https://kenhoulin.info)
 
 ---
 
 ## Education
 
-*[Populate from data/education.yml]*
-
----
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(edu, function(x)
+  sprintf("<tr><td style='width:4rem;color:#666'>%s</td><td>%s, %s</td></tr>",
+          x$year, x$degree, x$institution))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
 
 ## Appointments
 
-*[Populate from data/appointments.yml]*
-
----
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(appts, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
+          yr(x), x$title, x$institution))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
 
 ## Publications
 
-### Peer-Reviewed Articles
+*(\\* indicates graduate student co-author)*
 
-*[Auto-populated from publications.bib — @article entries]*
+```{r, echo=FALSE, results='asis'}
+types <- list(
+  list(label = "Books",                filter = "book"),
+  list(label = "Refereed Articles",    filter = "article"),
+  list(label = "Book Chapters",        filter = "chapter"),
+  list(label = "Working Papers",       filter = "working"),
+  list(label = "Op-Eds, Book Reviews, and Other", filter = "other")
+)
 
-### Books
+fmt_pub <- function(p) {
+  doi_link <- if (!is.na(p$doi) && nchar(p$doi))
+    sprintf(' <a href="https://doi.org/%s" target="_blank">[DOI]</a>', p$doi) else ""
+  sprintf('<p style="margin-bottom:0.6rem">%s (%s). "%s." <em>%s</em>%s%s</p>',
+          p$authors, p$year, p$title,
+          ifelse(is.na(p$venue), "", p$venue),
+          ifelse(is.na(p$volume_issue_pages) || !nchar(p$volume_issue_pages), "",
+                 paste0(" ", p$volume_issue_pages, ".")),
+          doi_link)
+}
 
-*[Auto-populated from publications.bib — @book entries]*
-
-### Book Chapters
-
-*[Auto-populated from publications.bib — @incollection entries]*
-
-### Other
-
-*[Auto-populated from publications.bib — other entry types]*
-
----
+for (t in types) {
+  sub <- pubs[pubs$type == t$filter & pubs$status == "published", ]
+  if (nrow(sub) == 0) next
+  sub <- sub[order(-sub$year), ]
+  cat_md(sprintf("\n### %s\n\n", t$label))
+  cat_md(sapply(seq_len(nrow(sub)), function(i) fmt_pub(sub[i,])))
+}
+```
 
 ## Grants & Fellowships
 
-*[Populate from data/grants.yml]*
-
----
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(grants, function(x)
+  sprintf('<tr><td style="width:7rem;color:#666;vertical-align:top">%s</td>
+           <td><strong>%s</strong><br>%s · %s%s</td></tr>',
+          yr(x), x$title, x$role, x$funder,
+          if (!is.null(x$amount)) paste0(" · ", x$amount) else ""))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
 
 ## Honors & Awards
 
-*[Populate from data/awards.yml]*
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(awards, function(x)
+  sprintf("<tr><td style='width:4rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
+          yr(x), x$name, x$org))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
 
----
+## Presentations
 
-## Invited Talks
-
-*[Populate from data/talks.yml]*
-
----
+```{r, echo=FALSE, results='asis'}
+years <- sort(unique(sapply(talks, `[[`, "year")), decreasing = TRUE)
+for (y in years) {
+  yr_talks <- Filter(function(x) x$year == y, talks)
+  cat_md(sprintf("\n**%s**\n\n", y))
+  items <- sapply(yr_talks, function(x) {
+    inv <- if (isTRUE(x$invited)) " *(Invited)*" else ""
+    sprintf('- "%s." %s, %s.%s\n', x$title, x$venue, x$location, inv)
+  })
+  cat_md(items)
+}
+```
 
 ## Teaching
 
-*[Populate from data/teaching.yml]*
-
----
+```{r, echo=FALSE, results='asis'}
+cat_md(sprintf("**%s**\n\n", teaching$institution))
+cat_md("*Graduate*\n\n")
+cat_md(paste0("- ", teaching$graduate, "\n"))
+cat_md("\n*Undergraduate*\n\n")
+cat_md(paste0("- ", teaching$undergraduate, "\n"))
+```
 
 ## Service
 
-*[Populate from data/service.yml]*
+### Editorial Positions
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(service$editorial, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s, <em>%s</em></td></tr>",
+          x$years, x$role, x$org))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
+
+### Professional Associations
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(service$professional_associations, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
+          x$years, x$role, x$org))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
+
+### University Service
+
+```{r, echo=FALSE, results='asis'}
+cat_md("*Departmental*\n\n")
+rows <- sapply(service$university$departmental, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
+          x$years, x$role))
+cat_md("<table style='border:none'>", rows, "</table>")
+
+cat_md("\n*College-wide*\n\n")
+rows <- sapply(service$university$college_wide, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
+          x$years, x$role))
+cat_md("<table style='border:none'>", rows, "</table>")
+
+cat_md("\n*University-wide*\n\n")
+rows <- sapply(service$university$university_wide, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
+          x$years, x$role))
+cat_md("<table style='border:none'>", rows, "</table>")
+```
+
+### Graduate Advising
+
+```{r, echo=FALSE, results='asis'}
+cat_md("*Dissertation Committee Chair*\n\n")
+rows <- sapply(service$advising$dissertation_chair, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s (%s)</td></tr>",
+          x$years, x$name, x$role))
+cat_md("<table style='border:none'>", rows, "</table>")
+
+cat_md("\n*Dissertation Committee Member*\n\n")
+rows <- sapply(service$advising$dissertation_committee, function(x)
+  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
+          x$years, x$name))
+cat_md("<table style='border:none'>", rows, "</table>")
+```

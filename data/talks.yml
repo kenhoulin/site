@@ -1,6 +1,279 @@
-# Invited Talks
-# - title, venue, location, year
-- title: "[Talk title]"
-  venue: "[Conference or institution]"
-  location: "[City, Country]"
-  year: 2024
+# Conference presentations and invited talks
+# invited: true marks invited presentations
+
+- year: 2025
+  title: "Stereotype or Status? Analyzing the Gender Disparities in Skill Signaling on LinkedIn"
+  venue: American Sociological Association Annual Meeting
+  location: Chicago, IL
+  invited: true
+
+- year: 2025
+  title: "The Contagion of Labor: Linking Workplace Adjacency and Occupational Mobility"
+  venue: "Society for the Advancement of Socio-Economics Annual Meeting"
+  location: Montreal, Canada
+
+- year: 2024
+  title: "Financialization in the 21st Century: Contemporary Trends and Emerging Research Directions"
+  venue: "Society for the Advancement of Socio-Economics Annual Meeting"
+  location: Limerick, Ireland
+
+- year: 2024
+  title: "Financialization in the 21st Century: Contemporary Trends and Emerging Research Directions"
+  venue: American Sociological Association Annual Meeting
+  location: Montreal, Canada
+
+- year: 2024
+  title: "Financial Assets and the Black-White Racial Wealth Gap"
+  venue: Institute of Racial Equity at the Federal Reserve Bank of St. Louis
+  location: St. Louis, MO
+  invited: true
+
+- year: 2023
+  title: "The Contagion of Labor: Linking Workplace Adjacency and Occupational Mobility"
+  venue: "TEXPOP Conference, Population Research Center, University of Texas"
+  location: Austin, TX
+  invited: true
+
+- year: 2023
+  title: "The Contagion of Labor: Linking Workplace Adjacency and Occupational Mobility"
+  venue: American Sociological Association Annual Meeting
+  location: Philadelphia, PA
+
+- year: 2022
+  title: Lessons from Studying Occupational Mobility Networks
+  venue: "Economic Sociology Seminar, Massachusetts Institute of Technology"
+  location: Cambridge, MA
+  invited: true
+
+- year: 2022
+  title: "The Significance of Stock-linked Assets in the Black-White Wealth Gap"
+  venue: "Workshop on Financialization and the Social Economy, University of Massachusetts–Boston"
+  location: Boston, MA
+  invited: true
+
+- year: 2022
+  title: "The Significance of Stock-linked Assets in the Black-White Wealth Gap"
+  venue: "Society for the Advancement of Socio-Economics Annual Meeting"
+  location: Amsterdam, Netherlands
+
+- year: 2021
+  title: "Divested: Inequality in the Age of Finance"
+  venue: Department of Sociology, University of Toronto
+  location: online
+  invited: true
+
+- year: 2021
+  title: "Divested: Inequality in the Age of Finance"
+  venue: "Capitalism Studies and Department of Sociology, University of North Carolina at Charlotte"
+  location: online
+  invited: true
+
+- year: 2021
+  title: "Divested: Inequality in the Age of Finance"
+  venue: "Department of Sociology and Global Asia Research Center, National Taiwan University"
+  location: online
+  invited: true
+
+- year: 2021
+  title: "The Significance of Financial Wealth in the Black-White Wealth Gap"
+  venue: American Sociological Association Annual Meeting
+  location: online
+
+- year: 2020
+  title: "Presidential Election, COVID-19, and Inequality"
+  venue: "Social Innovation Initiative Workshop, McCombs School of Business"
+  location: online
+  invited: true
+
+- year: 2020
+  title: "Debt and Economic Insecurity"
+  venue: "Thematic Session: Credit, Debt, and Inequality at Work, American Sociological Association Annual Meeting"
+  location: online
+  invited: true
+
+- year: 2020
+  title: The Network Structure of Occupations
+  venue: American Sociological Association Annual Meeting
+  location: online
+
+- year: 2020
+  title: Thinking about Finance in a Time of Pandemic
+  venue: "ASA Pre-conference: New Debates in the Sociology of Finance"
+  location: online
+  invited: true
+
+- year: 2019
+  title: Financial Reform a Decade after the Financial Crisis
+  venue: "New Deals in Europe and America, LBJ School of Public Affairs"
+  location: Austin, TX
+  invited: true
+
+- year: 2019
+  title: The Fragmentation of US Labor Market
+  venue: "Center for Empirical Research on Stratification and Inequality, Yale University"
+  location: New Haven, CT
+  invited: true
+
+- year: 2019
+  title: "How College Influences Attitudes about Guns: Examining Political Attitudes as Relational Properties"
+  venue: American Sociological Association Annual Meeting
+  location: New York, NY
+
+- year: 2018
+  title: Immigration and Wage Distribution
+  venue: "Center for the Study of Wealth and Inequality, Columbia University"
+  location: New York, NY
+  invited: true
+
+- year: 2018
+  title: Immigration and Wage Distribution
+  venue: "Social Processes and Structures Seminar, University of Paris–Sorbonne"
+  location: Paris, France
+  invited: true
+
+- year: 2018
+  title: American Life in Debt
+  venue: American Sociological Association Annual Meeting
+  location: Philadelphia, PA
+
+- year: 2018
+  title: "Reinforcing the Boundaries of Whiteness and Blackness: The Racial Preferences of Multiracial Online Daters"
+  venue: American Sociological Association Annual Meeting
+  location: Philadelphia, PA
+
+- year: 2018
+  title: "Invisible Boundaries in Cyberspace: A Relational Approach to Understand Racial Hierarchy in the United States"
+  venue: "Max Planck Sciences Po Center on Coping with Instability in Market Societies"
+  location: Paris, France
+  invited: true
+
+- year: 2017
+  title: "Growing Apart: The Changing Firm-Size Wage Premium and Its Inequality Consequences"
+  venue: American Sociological Association Annual Meeting
+  location: Montreal, Canada
+
+- year: 2017
+  title: The Inequality Consequences of Immigration
+  venue: American Sociological Association Annual Meeting
+  location: Montreal, Canada
+
+- year: 2016
+  title: "The Motherhood Penalty in Latin America: Evidence from Argentina, Brazil, Chile, Ecuador, Mexico & Peru"
+  venue: Population Association of America Annual Meeting
+  location: Washington, DC
+
+- year: 2016
+  title: "Divested: Inequality in Financialized America"
+  venue: "Invited Panel on Innovations in the Research of Work and Organizations, Southern Sociological Society Annual Meeting"
+  location: Atlanta, GA
+  invited: true
+
+- year: 2016
+  title: "Growing Apart: The Declining Firm-Size Wage Effect and Its Wage Inequality Consequence"
+  venue: "People and Organizations Conference, Wharton School of Business"
+  location: Philadelphia, PA
+
+- year: 2016
+  title: The Social and Organizational Determinants of Employment-Based Health Insurance
+  venue: "RDC Annual Research Conference, Texas A&M University"
+  location: College Station, TX
+
+- year: 2015
+  title: Gender, Parental Status and Financial Premium
+  venue: American Sociological Association Annual Meeting
+  location: Chicago, IL
+
+- year: 2015
+  title: "The Motherhood Penalty in Latin America: An Exploratory Study for Argentina & Peru"
+  venue: American Sociological Association Annual Meeting
+  location: Chicago, IL
+
+- year: 2015
+  title: Gender, Parental Status and Financial Premium
+  venue: Southern Sociological Society Annual Meeting
+  location: New Orleans, LA
+
+- year: 2014
+  title: "The Financial Premium in the US Labor Market: A Distributional Analysis"
+  venue: American Sociological Association Annual Meeting
+  location: San Francisco, CA
+
+- year: 2014
+  title: "Multiracial Status and Online Dating: A Bonus, a Penalty or Something In-between?"
+  venue: American Sociological Association Annual Meeting
+  location: San Francisco, CA
+
+- year: 2014
+  title: "The Rise of Finance and Firm Employment Dynamics, 1982–2005"
+  venue: Juan March Institute
+  location: Madrid, Spain
+
+- year: 2014
+  title: Did Financialization Decrease Economic Well-Being?
+  venue: Juan March Institute
+  location: Madrid, Spain
+
+- year: 2013
+  title: "Financialization and Firm Employment Dynamics, 1982–2005"
+  venue: American Sociological Association Annual Meeting
+  location: New York, NY
+
+- year: 2013
+  title: Income Inequality and the Financialization of the US Economy
+  venue: American Sociological Association Annual Meeting
+  location: New York, NY
+
+- year: 2012
+  title: "Mate Selection in Cyberspace: The Intersection of Race, Gender, and Education"
+  venue: American Sociological Association Annual Meeting
+  location: Denver, CO
+
+- year: 2012
+  title: "Financialization and Firm-level Employment Dynamics, 1980–2005"
+  venue: Southern Sociological Society Annual Meeting
+  location: New Orleans, LA
+
+- year: 2011
+  title: "Financialization and Rising Income Inequality: 1970–2008"
+  venue: "Mini-Conference on Work, Power, and Inequality"
+  location: Boston, MA
+
+- year: 2011
+  title: "Interracial Mate Selection in Cyberspace: The Intersection of Race, Gender, and Sexual Orientation"
+  venue: American Sociological Association Annual Meeting
+  location: Las Vegas, NV
+
+- year: 2011
+  title: "Financialization and Rising Income Inequality: A Dynamic Analysis"
+  venue: International Sociology Association RC28 Meeting
+  location: Iowa City, IA
+
+- year: 2011
+  title: Did Financialization Increase Income Inequality in the Non-Finance Sectors of the Economy?
+  venue: Southern Sociological Society Annual Meeting
+  location: Jacksonville, FL
+
+- year: 2011
+  title: "Interracial Intimate Relationships among Internet Daters: The Unexamined Role of Sexual Orientation and Gender"
+  venue: Eastern Sociological Society Annual Meeting
+  location: Philadelphia, PA
+
+- year: 2010
+  title: Economic Rents and the Financialization of the US Economy
+  venue: American Sociological Association Annual Meeting
+  location: Atlanta, GA
+
+- year: 2010
+  title: "Activity Time, Committed Time, and Constrained Time: Examining the Gap between Stylized and Diary-based Estimates of Market Work Time"
+  venue: International Association of Time-use Research Annual Meeting
+  location: Paris, France
+
+- year: 2010
+  title: Economic Rents and the Financialization of the US Economy
+  venue: "Society for the Advancement of Socio-Economics Annual Meeting"
+  location: Philadelphia, PA
+
+- year: 2009
+  title: "Do Mexican Immigrant Men Work More? Examining the Difference in Work Time between Mexican Immigrant and Non-Hispanic White Men"
+  venue: Population Association of America Annual Meeting
+  location: Detroit, MI
