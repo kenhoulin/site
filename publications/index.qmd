@@ -1,0 +1,42 @@
+---
+title: "Publications"
+format:
+  html:
+    toc: false
+    include-after-body: ["network.js", "filter.js"]
+---
+
+My research sits at the intersection of labor markets and inequality, gender, and quantitative methods.
+See the [research page](../research.qmd) for more context.
+
+---
+
+<div class="publications-layout">
+
+<!-- ── Network graph (left, 60%) ──────────────────────────────── -->
+<div id="network-container">
+  <svg id="pub-network"></svg>
+</div>
+
+<!-- ── Filter panel + list (right, 40%) ──────────────────────── -->
+<div class="filter-panel">
+
+  <div id="keyword-chips"></div>
+  <div id="outlet-chips"></div>
+
+  <div class="filter-toggle">
+    Keywords match:
+    <label><input type="radio" name="kwmode" value="and" checked> ALL</label>
+    <label><input type="radio" name="kwmode" value="or"> ANY</label>
+    &nbsp;
+    <button id="clear-filters" class="btn btn-sm btn-outline-secondary">Clear filters</button>
+  </div>
+
+  <div id="pub-count"></div>
+
+  <div id="pub-list"></div>
+
+</div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>

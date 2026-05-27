@@ -1,0 +1,89 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: false
+---
+
+```{r}
+#| echo: false
+#| message: false
+# Auto-set last-updated date
+last_updated <- format(Sys.Date(), "%B %Y")
+```
+
+::: {.content-visible when-format="html"}
+**Last updated:** `r last_updated` &nbsp;&nbsp; [Download PDF](cv.pdf){.btn .btn-outline-secondary .btn-sm}
+:::
+
+---
+
+## Ken-Hou Lin
+
+Professor of Sociology · University of Texas at Austin
+[kenhoulin@utexas.edu](mailto:kenhoulin@utexas.edu)
+
+---
+
+## Education
+
+*[Populate from data/education.yml]*
+
+---
+
+## Appointments
+
+*[Populate from data/appointments.yml]*
+
+---
+
+## Publications
+
+### Peer-Reviewed Articles
+
+*[Auto-populated from publications.bib — @article entries]*
+
+### Books
+
+*[Auto-populated from publications.bib — @book entries]*
+
+### Book Chapters
+
+*[Auto-populated from publications.bib — @incollection entries]*
+
+### Other
+
+*[Auto-populated from publications.bib — other entry types]*
+
+---
+
+## Grants & Fellowships
+
+*[Populate from data/grants.yml]*
+
+---
+
+## Honors & Awards
+
+*[Populate from data/awards.yml]*
+
+---
+
+## Invited Talks
+
+*[Populate from data/talks.yml]*
+
+---
+
+## Teaching
+
+*[Populate from data/teaching.yml]*
+
+---
+
+## Service
+
+*[Populate from data/service.yml]*

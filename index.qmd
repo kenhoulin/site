@@ -1,0 +1,52 @@
+---
+title: ""
+format:
+  html:
+    toc: false
+---
+
+<!-- ── Header ─────────────────────────────────────────────────── -->
+::: {.columns}
+::: {.column width="75%"}
+# Ken-Hou Lin
+
+**Professor of Sociology**
+University of Texas at Austin
+
+[{{< fa envelope >}} Email](mailto:kenhoulin@utexas.edu) &nbsp;|&nbsp;
+[ORCID](https://orcid.org/XXXX-XXXX-XXXX-XXXX) &nbsp;|&nbsp;
+[Google Scholar](https://scholar.google.com/) &nbsp;|&nbsp;
+[GitHub](https://github.com/)
+:::
+::: {.column width="25%"}
+<!-- Optional photo: ![](assets/photo.jpg){.rounded width=180} -->
+:::
+:::
+
+---
+
+<!-- ── Bio ────────────────────────────────────────────────────── -->
+
+*[Bio text — Ken will provide.]*
+
+---
+
+<!-- ── Selected Publications ─────────────────────────────────── -->
+
+## Selected Publications
+
+*[Auto-populated from .bib entries tagged `featured = {true}` — placeholder until publications.bib is ready.]*
+
+---
+
+::: {.grid}
+::: {.g-col-4}
+[**Full CV**](cv.qmd)
+:::
+::: {.g-col-4}
+[**Publications**](publications/index.qmd)
+:::
+::: {.g-col-4}
+[**Research**](research.qmd)
+:::
+:::

@@ -1,0 +1,43 @@
+% cv-template.tex — clean single-column academic CV template
+% Used by Quarto PDF output for cv.qmd
+% Adapt as needed; confirm final style with Ken before finalizing.
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}   % or swap to EB Garamond / Palatino Linotype
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!60!black,
+  linkcolor=black
+}
+
+\titleformat{\section}
+  {\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+
+\setlist[itemize]{nosep, left=0pt}
+
+\begin{document}
+
+% ── Header ───────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\textbf{Ken-Hou Lin}} \\[0.4em]
+  Professor of Sociology $\cdot$ University of Texas at Austin \\
+  \href{mailto:kenhoulin@utexas.edu}{kenhoulin@utexas.edu} $\cdot$
+  \href{https://kenhoulin.info}{kenhoulin.info}
+\end{center}
+
+\vspace{0.5em}
+
+% ── Quarto will inject the body content here ─────────────────────────────────
+$body$
+
+\end{document}

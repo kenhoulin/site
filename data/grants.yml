@@ -1,0 +1,7 @@
+# Grants & Fellowships
+# - title, funder, amount (optional), years, role (PI/Co-PI)
+- title: "[Grant title]"
+  funder: "[Agency]"
+  amount: "$[Amount]"
+  years: "[Years]"
+  role: PI

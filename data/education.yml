@@ -1,0 +1,11 @@
+# Education
+# Format: degree, institution, year (+ optional note)
+- degree: Ph.D., Sociology
+  institution: "[Institution]"
+  year: "[Year]"
+- degree: M.A., [Field]
+  institution: "[Institution]"
+  year: "[Year]"
+- degree: B.A., [Field]
+  institution: "[Institution]"
+  year: "[Year]"

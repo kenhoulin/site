@@ -1,0 +1,117 @@
+/* ── Typography ──────────────────────────────────────────────── */
+body {
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, h4 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+.quarto-container {
+  max-width: 860px;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ── CV page ─────────────────────────────────────────────────── */
+.cv-section {
+  margin-bottom: 2rem;
+}
+
+.cv-section h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Publications page ───────────────────────────────────────── */
+.publications-layout {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .publications-layout {
+    grid-template-columns: 1fr;
+  }
+  #network-container {
+    display: none;
+  }
+}
+
+#network-container {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  background: #fafafa;
+  position: sticky;
+  top: 1rem;
+}
+
+.filter-panel {
+  position: sticky;
+  top: 1rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  margin: 0.2em;
+  border: 1px solid #999;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.chip.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+.chip:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+.filter-toggle {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+#pub-count {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.pub-entry {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pub-entry .pub-title {
+  font-weight: 600;
+}
+
+.pub-entry .pub-venue {
+  font-style: italic;
+}
+
+.pub-year-group h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}

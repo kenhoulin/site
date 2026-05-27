@@ -1,0 +1,17 @@
+---
+title: "Research"
+---
+
+*[Ken will draft content. Structure below is a placeholder — replace with 2–3 paragraphs per research stream with links to representative publications.]*
+
+## Labor Markets & Inequality
+
+...
+
+## Gender
+
+...
+
+## Quantitative Methods & Prediction Markets
+
+...
