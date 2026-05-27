@@ -1,17 +1,14 @@
 #!/usr/bin/env Rscript
-# gen_bib.R — convert G:/My Drive/CV/publications.csv → publications/publications.bib
+# gen_bib.R — convert publications.csv → publications/publications.bib
 # Uses only base R; no package dependencies.
 
-# Resolve project root relative to this script's location so it works from any wd
-script_path <- normalizePath(
-  sub("--file=", "", grep("--file=", commandArgs(trailingOnly = FALSE), value = TRUE)[1]),
-  mustWork = FALSE
-)
-proj_root <- normalizePath(file.path(dirname(script_path), ".."), mustWork = FALSE)
-setwd(proj_root)
+# ── Configuration ─────────────────────────────────────────────────────────────
+proj_root <- "G:/My Drive/CV/Website"
+# ─────────────────────────────────────────────────────────────────────────────
 
-csv_path <- "G:/My Drive/CV/publications.csv"
-out_path <- "publications/publications.bib"
+setwd(proj_root)
+csv_path <- file.path(proj_root, "publications.csv")
+out_path <- file.path(proj_root, "publications", "publications.bib")
 
 dat <- read.csv(csv_path, stringsAsFactors = FALSE, na.strings = c("", "NA"))
 
