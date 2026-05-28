@@ -8,10 +8,10 @@
   --ink:        #0a0a0a;
   --ink-soft:   #404040;
   --ink-muted:  #737373;
-  --rule:       #e7e7e7;
-  --rule-soft:  #f1f1f1;
+  --rule:       #e3e1dd;
+  --rule-soft:  #efedea;
   --bg:         #ffffff;
-  --bg-soft:    #fafafa;
+  --bg-soft:    #f4f3f1;
   --accent:     #00695C;
   --accent-2:   #00897B;
   --accent-tint:#e0f2f0;
@@ -115,8 +115,8 @@ main.content,
 .section-light { background: var(--bg); }
 .section-tint  { background: var(--bg-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .section-dark  {
-  background: #0d2624;
-  color: #eef2f1;
+  background: #1c1c1a;
+  color: #f0efec;
 }
 .section-dark h2 { color: #ffffff; }
 .section-dark h2::after { background: var(--accent-2); }
@@ -251,7 +251,7 @@ header .navbar,
 .hero {
   text-align: center;
   padding: 5rem 0 4rem;
-  background: #f0f7f5;
+  background: #eeece8;
   border-bottom: 1px solid var(--rule);
   animation: fadeUp 0.7s ease-out;
 }
