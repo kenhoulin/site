@@ -110,7 +110,7 @@ main.content,
   margin-right: auto;
 }
 .section-tint > .publications-layout {
-  max-width: 1280px; /* graph section gets a wider canvas */
+  max-width: var(--maxw);
 }
 .section-light { background: var(--bg); }
 .section-tint  { background: var(--bg-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
@@ -374,7 +374,7 @@ header .navbar,
 .section-light p,
 .section-tint  p,
 .section-dark  p {
-  max-width: 70ch;
+  max-width: var(--maxw);
   margin-left: auto;
   margin-right: auto;
   font-size: 1.05rem;
