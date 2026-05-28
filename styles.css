@@ -30,7 +30,7 @@ html { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   font-weight: 400;
   letter-spacing: -0.005em;
@@ -440,11 +440,11 @@ main.content ul li em {
 
 .chip {
   display: inline-block;
-  padding: 0.32em 0.85em;
-  margin: 0.18em 0.18em 0.18em 0;
+  padding: 0.4em 1em;
+  margin: 0.22em 0.22em 0.22em 0;
   border: 1px solid var(--rule);
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--ink-soft);
   background: var(--bg);
@@ -463,7 +463,7 @@ main.content ul li em {
 }
 
 .filter-toggle {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--ink-muted);
   margin: 1rem 0 0.5rem;
   display: flex;
@@ -475,8 +475,8 @@ main.content ul li em {
   cursor: pointer;
 }
 #clear-filters {
-  font-size: 0.78rem;
-  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.85rem;
   border: 1px solid var(--rule);
   background: var(--bg);
   color: var(--ink-soft);
@@ -490,7 +490,7 @@ main.content ul li em {
 }
 
 #pub-count {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--ink-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -505,7 +505,7 @@ main.content ul li em {
 }
 
 .pub-year-group h3 {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.1em;
@@ -516,8 +516,8 @@ main.content ul li em {
 .pub-entry {
   padding: 0.9rem 0;
   border-bottom: 1px solid var(--rule-soft);
-  font-size: 0.93rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 .pub-entry .pub-title {
@@ -529,10 +529,10 @@ main.content ul li em {
 .pub-entry .pub-venue {
   font-style: normal;
   color: var(--accent);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 .pub-entry a {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #1a6fb3;
@@ -545,12 +545,12 @@ main.content ul li em {
 
 .pub-abstract {
   margin-top: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--ink-muted);
 }
 .pub-abstract > summary {
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #1a6fb3;
