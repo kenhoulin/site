@@ -35,13 +35,7 @@ assets/
 
 ## Adding a publication
 
-Edit `publications/publications.bib` directly, or run the CSV migration script:
-
-```bash
-Rscript scripts/csv_to_bib.R path/to/your_publications.csv
-```
-
-Then `quarto render` to rebuild.
+Edit `publications/publications.bib` directly, then `quarto render` to rebuild.
 
 ## Deployment
 

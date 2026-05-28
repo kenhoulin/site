@@ -1,52 +1,104 @@
 ---
 title: ""
+pagetitle: "Ken-Hou Lin"
 format:
   html:
     toc: false
+    page-layout: full
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://rsms.me/">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    include-after-body:
+      text: |
+        <script src="publications/network.js"></script>
+        <script src="publications/filter.js"></script>
+        <script>
+            const io = new IntersectionObserver((entries) => {
+              entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('main.content > *').forEach((el, i) => {
+              if (el.classList.contains('hero')) return;
+              el.classList.add('reveal');
+              el.style.transitionDelay = Math.min(i * 25, 250) + 'ms';
+              io.observe(el);
+            });
+          </script>
 ---
 
-<!-- ── Header ─────────────────────────────────────────────────── -->
-::: {.columns}
-::: {.column width="75%"}
+::: {.hero}
+
+![](assets/photo.jpg){.hero-photo fig-alt="Ken-Hou Lin"}
+
 # Ken-Hou Lin
 
-**Professor of Sociology**
-University of Texas at Austin
+[Professor of Sociology · University of Texas at Austin]{.tagline}
 
-[{{< fa envelope >}} Email](mailto:kenhoulin@utexas.edu) &nbsp;|&nbsp;
-[ORCID](https://orcid.org/XXXX-XXXX-XXXX-XXXX) &nbsp;|&nbsp;
-[Google Scholar](https://scholar.google.com/) &nbsp;|&nbsp;
-[GitHub](https://github.com/)
-:::
-::: {.column width="25%"}
-<!-- Optional photo: ![](assets/photo.jpg){.rounded width=180} -->
-:::
+::: {.hero-contacts}
+[{{< fa envelope >}}](mailto:lin@austin.utexas.edu){title="Email"}
+[{{< fa graduation-cap >}}](https://scholar.google.com/citations?user=4rlcdG0AAAAJ&hl=en){title="Google Scholar"}
+[{{< fa file-lines >}}](cv.pdf){title="CV"}
+
 :::
 
----
-
-<!-- ── Bio ────────────────────────────────────────────────────── -->
-
-*[Bio text — Ken will provide.]*
-
----
-
-<!-- ── Selected Publications ─────────────────────────────────── -->
-
-## Selected Publications
-
-*[Auto-populated from .bib entries tagged `featured = {true}` — placeholder until publications.bib is ready.]*
-
----
-
-::: {.grid}
-::: {.g-col-4}
-[**Full CV**](cv.qmd)
 :::
-::: {.g-col-4}
-[**Publications**](publications/index.qmd)
+
+::: {.section .section-light}
+## About {#about}
+
+Welcome to my personal website!
+
+I'm Professor of Sociology at the University of Texas at Austin. My work studies the production of social inequality using statistical and computational methods.
+
+My books include *Divested: Inequality in the Age of Finance* (with Megan Tobias Neely, Oxford University Press, 2020) and *The Dating Divide: Race and Desire in the Era of Online Romance* (with Celeste Curington and Jennifer Lundquist, University of California Press, 2021). My work has been covered in the *New York Times*, *Washington Post*, *Harvard Business Review*, and *The New Republic*.
+
+I edit *Socio-Economic Review*, the official journal of the Society for the Advancement of Socio-Economics (SASE), and previously served as Deputy Editor at *Demography*.
+
+My current projects examine what large language models can reveal about labor markets, and what prediction markets tell us about how societies form beliefs about their own futures.
+
 :::
-::: {.g-col-4}
-[**Research**](research.qmd)
+
+::: {.section .section-tint}
+## Research {#research}
+
+
+```{=html}
+<div class="publications-layout">
+<div id="network-container">
+<svg id="pub-network"></svg>
+</div>
+<div class="filter-panel">
+<div id="keyword-chips"></div>
+<div class="filter-toggle">
+<span>Match:</span>
+<label><input type="radio" name="kwmode" value="and" checked> ALL</label>
+<label><input type="radio" name="kwmode" value="or"> ANY</label>
+<button id="clear-filters">Clear</button>
+</div>
+<div id="pub-count"></div>
+<div id="pub-list"></div>
+</div>
+</div>
+```
 :::
+
+::: {.section .section-light}
+
+## Contact {#contact}
+
+```{=html}
+<dl class="contact-grid">
+  <dt>Email</dt>
+  <dd><a href="mailto:lin@austin.utexas.edu">lin@austin.utexas.edu</a></dd>
+
+  <dt>Office</dt>
+  <dd>Department of Sociology<br>University of Texas at Austin</dd>
+
+  <dt>Mail</dt>
+  <dd>305 E 23rd St, Stop G1800<br>Austin, TX 78712</dd>
+
+  <dt>Scholar</dt>
+  <dd><a href="https://scholar.google.com/citations?user=4rlcdG0AAAAJ&amp;hl=en">Google Scholar profile</a></dd>
+</dl>
+```
 :::

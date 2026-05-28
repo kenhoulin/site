@@ -7,12 +7,12 @@
   let activeOut = new Set();
   let kwMode    = "and"; // "and" | "or"
 
-  fetch("publications.json")
+  fetch("publications/publications.json")
     .then(r => r.json())
     .then(data => {
       allPubs = data;
       buildChips();
-      renderList(allPubs);
+      renderList([]); // start empty — only show pubs once a chip is selected
     })
     .catch(() => {
       document.getElementById("pub-list").innerHTML =
@@ -20,20 +20,19 @@
     });
 
   function buildChips() {
-    const kwSet  = new Set();
-    const outSet = new Set();
-    allPubs.forEach(p => {
-      (p.keywords || []).forEach(k => kwSet.add(k));
-      if (p.outlet) outSet.add(p.outlet);
-    });
+    // Count keyword frequencies across all publications
+    const kwCount = new Map();
+    allPubs.forEach(p => (p.keywords || []).forEach(k => {
+      kwCount.set(k, (kwCount.get(k) || 0) + 1);
+    }));
 
-    renderChips("keyword-chips", [...kwSet].sort(), activeKw, kw => {
+    // Sort by frequency desc, then alphabetically as tiebreaker
+    const ordered = [...kwCount.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([k]) => k);
+
+    renderChips("keyword-chips", ordered, activeKw, kw => {
       toggle(activeKw, kw);
-      applyFilters();
-    });
-
-    renderChips("outlet-chips", [...outSet].sort(), activeOut, out => {
-      toggle(activeOut, out);
       applyFilters();
     });
   }
@@ -61,28 +60,24 @@
 
   document.getElementById("clear-filters")?.addEventListener("click", () => {
     activeKw.clear();
-    activeOut.clear();
     buildChips();
     applyFilters();
   });
 
   function applyFilters() {
-    // Rebuild chip states
     buildChips();
 
-    let filtered = allPubs;
+    const hasFilter = activeKw.size > 0;
 
-    if (activeKw.size > 0) {
-      filtered = filtered.filter(p => {
+    // Only build a publication list when at least one keyword is selected.
+    let filtered = [];
+    if (hasFilter) {
+      filtered = allPubs.filter(p => {
         const pkw = new Set(p.keywords || []);
         return kwMode === "and"
           ? [...activeKw].every(k => pkw.has(k))
           : [...activeKw].some(k => pkw.has(k));
       });
-    }
-
-    if (activeOut.size > 0) {
-      filtered = filtered.filter(p => activeOut.has(p.outlet));
     }
 
     renderList(filtered);
@@ -94,35 +89,67 @@
     const listEl  = document.getElementById("pub-list");
     if (!listEl) return;
 
+    // No filter selected → empty list with a prompt, no count
+    if (activeKw.size === 0) {
+      if (countEl) countEl.textContent = "";
+      listEl.innerHTML = '<p class="pub-empty">Select one or more topics to see related publications.</p>';
+      return;
+    }
+
     if (countEl) countEl.textContent = `Showing ${pubs.length} of ${allPubs.length} publications`;
 
-    // Group by year descending
-    const byYear = {};
-    pubs.forEach(p => {
-      byYear[p.year] = byYear[p.year] || [];
-      byYear[p.year].push(p);
-    });
+    // Sort by citation count desc (most-cited first); fall back to year desc for ties
+    const sorted = pubs.slice().sort((a, b) =>
+      (b.citations || 0) - (a.citations || 0) || (b.year - a.year)
+    );
 
-    const years = Object.keys(byYear).sort((a, b) => b - a);
-    listEl.innerHTML = years.map(yr => `
-      <div class="pub-year-group">
-        <h3>${yr}</h3>
-        ${byYear[yr].map(pubHtml).join("")}
-      </div>
-    `).join("");
+    listEl.innerHTML = sorted.map(pubHtml).join("");
   }
 
-  function pubHtml(p) {
-    const doi = p.doi ? ` <a href="https://doi.org/${p.doi}" target="_blank">[DOI]</a>` : "";
-    const pdf = p.pdf ? ` <a href="${p.pdf}" target="_blank">[PDF]</a>` : "";
+  // ASA-style author list: first author "Last, First"; subsequent "First Last".
+  // 2 authors → "A and B"; 3+ → "A, B, and C" (Oxford comma).
+  function formatAuthorsASA(raw) {
+    if (!raw) return "";
+    const parts = raw.split(";").map(s => s.trim()).filter(Boolean);
+    const formatted = parts.map((name, i) => {
+      const comma = name.indexOf(",");
+      if (comma === -1) return name; // already "First Last" or single token
+      const last  = name.slice(0, comma).trim();
+      const first = name.slice(comma + 1).trim();
+      return i === 0 ? `${last}, ${first}` : `${first} ${last}`;
+    });
+    if (formatted.length <= 1) return formatted.join("");
+    if (formatted.length === 2) return `${formatted[0]} and ${formatted[1]}`;
+    return formatted.slice(0, -1).join(", ") + ", and " + formatted.at(-1);
+  }
+
+  function pubHtml(p, opts = {}) {
+    const doi = p.doi ? ` <a href="https://doi.org/${p.doi}" target="_blank" class="pub-link">[DOI]</a>` : "";
+    const pdf = p.pdf ? ` <a href="${p.pdf}" target="_blank" class="pub-link">[PDF]</a>` : "";
+    const openAttr = opts.openAbstract ? " open" : "";
+    const abs = p.abstract
+      ? `<details class="pub-abstract"${openAttr}><summary>Abstract</summary><p>${p.abstract.replace(/\n\n+/g, "</p><p>")}</p></details>`
+      : "";
     return `
       <div class="pub-entry" data-id="${p.id}">
-        <span class="pub-authors">${p.authors}</span> (${p.year}).
-        <span class="pub-title">${p.title}</span>.
-        <span class="pub-venue">${p.outlet || ""}</span>.
+        <span class="pub-authors">${formatAuthorsASA(p.authors)}</span>. ${p.year}.
+        <span class="pub-title">${p.title}</span>
+        <span class="pub-venue"><em>${p.outlet || ""}</em></span>.
         ${doi}${pdf}
+        ${abs}
       </div>`;
   }
+
+  // Expose: render a single publication (by id) with its abstract expanded.
+  // Called from network.js when a node is clicked.
+  window.showPubById = function (id) {
+    const p = allPubs.find(x => x.id === id);
+    if (!p) return;
+    const countEl = document.getElementById("pub-count");
+    const listEl  = document.getElementById("pub-list");
+    if (countEl) countEl.textContent = "Selected publication";
+    if (listEl)  listEl.innerHTML = pubHtml(p, { openAbstract: true });
+  };
 
   function updateNetworkDimming(matchIds) {
     if (!window._networkSvgNodes) return;

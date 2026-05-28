@@ -2,19 +2,29 @@ project:
   type: website
   pre-render: _quarto-pre-render.R
   output-dir: _site
+  resources:
+    - publications/network.json
+    - publications/publications.json
+    - publications/network.js
+    - publications/filter.js
+    - cv.pdf
+    - assets/
 
 website:
   title: "Ken-Hou Lin"
   navbar:
+    pinned: true
+    background: light
     left:
       - href: index.qmd
-        text: Home
-      - href: research.qmd
-        text: Research
-      - href: publications/index.qmd
-        text: Publications
-      - href: cv.qmd
-        text: CV
+        text: About
+      - text: Research
+        href: index.qmd#research
+      - text: Contact
+        href: index.qmd#contact
+      - text: CV
+        href: cv.pdf
+        target: _blank
   page-footer:
     center: "Ken-Hou Lin · University of Texas at Austin"
 
@@ -23,7 +33,3 @@ format:
     theme: cosmo
     css: styles.css
     toc: false
-  pdf:
-    documentclass: article
-    template: assets/cv-template.tex
-    keep-tex: false

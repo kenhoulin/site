@@ -1,15 +1,22 @@
 ---
-title: "Curriculum Vitae"
+title: ""
 format:
-  html:
-    toc: true
-    toc-depth: 2
   pdf:
-    toc: false
+    template: assets/cv-template.tex
+    keep-tex: true
+    pdf-engine: pdflatex
 ---
 
 ```{r setup, include=FALSE}
 library(yaml)
+# Ensure user libraries are visible (bib2df may be installed under another R minor)
+local({
+  base <- file.path(Sys.getenv("USERPROFILE"), "AppData", "Local", "R", "win-library")
+  libs <- list.dirs(base, recursive = FALSE, full.names = TRUE)
+  libs <- libs[dir.exists(libs)]
+  if (length(libs)) .libPaths(unique(c(libs, .libPaths())))
+})
+suppressPackageStartupMessages(library(bib2df))
 
 edu      <- yaml::read_yaml("data/education.yml")
 appts    <- yaml::read_yaml("data/appointments.yml")
@@ -18,51 +25,83 @@ awards   <- yaml::read_yaml("data/awards.yml")
 talks    <- yaml::read_yaml("data/talks.yml")
 teaching <- yaml::read_yaml("data/teaching.yml")[[1]]
 service  <- yaml::read_yaml("data/service.yml")
-pubs     <- read.csv("publications.csv", stringsAsFactors = FALSE, na.strings = c("", "NA"))
 
-# Helper: emit raw HTML/markdown
-cat_md <- function(...) knitr::asis_output(paste0(..., collapse = "\n"))
+# ── Load publications from BibTeX ────────────────────────────────────────────
+bib_raw <- bib2df::bib2df("publications/publications.bib")
+names(bib_raw) <- tolower(names(bib_raw))
+for (col in c("doi","journal","publisher","booktitle","volume","number",
+              "pages","howpublished","note")) {
+  if (!col %in% names(bib_raw)) bib_raw[[col]] <- NA_character_
+}
+bib_type_map <- c(article = "article", book = "book",
+                  incollection = "chapter", inproceedings = "chapter",
+                  unpublished = "working", techreport = "working",
+                  misc = "other")
+pubs <- data.frame(
+  type    = unname(ifelse(is.na(bib_type_map[tolower(bib_raw$category)]),
+                          "other", bib_type_map[tolower(bib_raw$category)])),
+  year    = as.integer(bib_raw$year),
+  title   = bib_raw$title,
+  authors = vapply(bib_raw$author,
+                   function(a) paste(a, collapse = " and "),
+                   character(1)),
+  journal   = bib_raw$journal,
+  publisher = bib_raw$publisher,
+  booktitle = bib_raw$booktitle,
+  volume    = bib_raw$volume,
+  number    = bib_raw$number,
+  pages     = bib_raw$pages,
+  howpub    = bib_raw$howpublished,
+  note      = bib_raw$note,
+  doi       = bib_raw$doi,
+  stringsAsFactors = FALSE
+)
 
-# Helper: year label (handles both 'year' and 'years' keys)
+cat_md <- function(...) cat(paste0(..., collapse = "\n"))
+
 yr <- function(x) if (!is.null(x$years)) x$years else as.character(x$year)
+
+# Escape LaTeX-special characters in text fields
+ltx <- function(s) {
+  if (is.null(s) || is.na(s)) return("")
+  s <- as.character(s)
+  s <- gsub("\\\\", "\\\\textbackslash{}", s)
+  s <- gsub("([&%$#_{}])", "\\\\\\1", s)
+  s <- gsub("~", "\\\\textasciitilde{}", s)
+  s <- gsub("\\^", "\\\\textasciicircum{}", s)
+  s
+}
+
+# Two-column longtable, emitted as a raw LaTeX block so Pandoc doesn't rewrite it
+two_col <- function(rows) {
+  paste0(
+    "\n```{=latex}\n",
+    "\\begin{longtable}{@{}p{1in}p{5.3in}@{}}\n",
+    paste(rows, collapse = " \\\\\n"),
+    " \\\\\n\\end{longtable}\n",
+    "```\n"
+  )
+}
 ```
 
-::: {.content-visible when-format="html"}
-**Last updated:** `r format(Sys.Date(), "%B %Y")` &nbsp;&nbsp;
-[Download PDF](cv.pdf){.btn .btn-outline-secondary .btn-sm}
-:::
 
----
 
-**Ken-Hou Lin**
-
-Professor of Sociology · University of Texas at Austin ·
-[lin\@austin.utexas.edu](mailto:lin@austin.utexas.edu) ·
-[kenhoulin.info](https://kenhoulin.info)
-
----
-
-## Education
-
-```{r, echo=FALSE, results='asis'}
-rows <- sapply(edu, function(x)
-  sprintf("<tr><td style='width:4rem;color:#666'>%s</td><td>%s, %s</td></tr>",
-          x$year, x$degree, x$institution))
-cat_md("<table style='border:none'>", rows, "</table>")
-```
-
-## Appointments
+# Appointments
 
 ```{r, echo=FALSE, results='asis'}
 rows <- sapply(appts, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
-          yr(x), x$title, x$institution))
-cat_md("<table style='border:none'>", rows, "</table>")
+  sprintf("%s & %s, %s", ltx(yr(x)), ltx(x$title), ltx(x$institution)))
+cat_md(two_col(rows))
+```
+# Education
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(edu, function(x)
+  sprintf("%s & %s, %s", ltx(x$year), ltx(x$degree), ltx(x$institution)))
+cat_md(two_col(rows))
 ```
 
-## Publications
-
-*(\\* indicates graduate student co-author)*
+# Publications
 
 ```{r, echo=FALSE, results='asis'}
 types <- list(
@@ -73,47 +112,112 @@ types <- list(
   list(label = "Op-Eds, Book Reviews, and Other", filter = "other")
 )
 
+# BibTeX gives "Last, First" — keep first author as-is, invert subsequent ones.
+uninvert <- function(name) {
+  name <- trimws(name)
+  if (!grepl(",", name)) return(name)
+  m <- regmatches(name, regexec("^([^,]+),\\s*(.+)$", name))[[1]]
+  if (length(m) == 3) paste(m[3], m[2]) else name
+}
+
+fmt_authors_asa <- function(s) {
+  parts <- trimws(strsplit(s, "\\s+and\\s+")[[1]])
+  if (length(parts) == 0) return("")
+  if (length(parts) > 1) parts[-1] <- vapply(parts[-1], uninvert, character(1))
+  bold <- function(x) ifelse(grepl("Ken-?Hou", x) & grepl("Lin", x),
+                             paste0("\\textbf{", x, "}"), x)
+  parts <- bold(parts)
+  if (length(parts) == 1) return(parts)
+  if (length(parts) == 2) return(paste(parts[1], "and", parts[2]))
+  paste0(paste(parts[-length(parts)], collapse = ", "),
+         ", and ", parts[length(parts)])
+}
+
+# Build "vol(num):pages" from bib components
+vip_string <- function(p) {
+  has_v <- !is.na(p$volume) && nchar(p$volume)
+  has_n <- !is.na(p$number) && nchar(p$number)
+  has_p <- !is.na(p$pages)  && nchar(p$pages)
+  pp <- if (has_p) gsub("--", "-", p$pages) else ""
+  if (has_v && has_n && has_p) return(sprintf("%s(%s):%s", p$volume, p$number, pp))
+  if (has_v && has_p)          return(sprintf("%s:%s", p$volume, pp))
+  if (has_p)                   return(pp)
+  if (has_v && has_n)          return(sprintf("%s(%s)", p$volume, p$number))
+  if (has_v)                   return(p$volume)
+  ""
+}
+
 fmt_pub <- function(p) {
   doi_link <- if (!is.na(p$doi) && nchar(p$doi))
-    sprintf(' <a href="https://doi.org/%s" target="_blank">[DOI]</a>', p$doi) else ""
-  sprintf('<p style="margin-bottom:0.6rem">%s (%s). "%s." <em>%s</em>%s%s</p>',
-          p$authors, p$year, p$title,
-          ifelse(is.na(p$venue), "", p$venue),
-          ifelse(is.na(p$volume_issue_pages) || !nchar(p$volume_issue_pages), "",
-                 paste0(" ", p$volume_issue_pages, ".")),
-          doi_link)
+    sprintf(' \\href{https://doi.org/%s}{[DOI]}', p$doi) else ""
+  authors <- fmt_authors_asa(p$authors)
+  year <- ltx(as.character(p$year))
+  title <- ltx(p$title)
+  vip <- ltx(vip_string(p))
+
+  body <- switch(as.character(p$type),
+    book = {
+      pub <- if (!is.na(p$publisher)) ltx(p$publisher) else ""
+      sprintf("\\emph{%s}.%s", title,
+              if (nchar(pub)) paste0(" ", pub, ".") else "")
+    },
+    article = {
+      jrn <- if (!is.na(p$journal)) ltx(p$journal) else ""
+      pages <- if (nchar(vip)) paste0(" ", vip, ".") else ""
+      sprintf("\"%s.\" \\emph{%s}%s", title, jrn, pages)
+    },
+    chapter = {
+      bt <- if (!is.na(p$booktitle)) ltx(p$booktitle) else ""
+      pp <- if (nchar(vip)) sprintf("Pp. %s in ", vip) else ""
+      sprintf("\"%s.\" %s\\emph{%s}.", title, pp, bt)
+    },
+    working = {
+      venue <- if (!is.na(p$howpub) && nchar(p$howpub)) ltx(p$howpub)
+               else if (!is.na(p$note) && nchar(p$note)) ltx(p$note) else ""
+      sprintf("\"%s.\" Working Paper%s", title,
+              if (nchar(venue)) paste0(", ", venue, ".") else ".")
+    },
+    other = {
+      venue <- if (!is.na(p$journal)) ltx(p$journal)
+               else if (!is.na(p$howpub)) ltx(p$howpub) else ""
+      sprintf("\"%s.\"%s", title,
+              if (nchar(venue)) paste0(" \\emph{", venue, "}.") else "")
+    }
+  )
+
+  sprintf("%s. %s. %s%s\n\n", authors, year, body, doi_link)
 }
 
 for (t in types) {
-  sub <- pubs[pubs$type == t$filter & pubs$status == "published", ]
+  sub <- pubs[pubs$type == t$filter, ]
   if (nrow(sub) == 0) next
   sub <- sub[order(-sub$year), ]
-  cat_md(sprintf("\n### %s\n\n", t$label))
+  cat_md(sprintf("\n## %s\n\n", t$label))
   cat_md(sapply(seq_len(nrow(sub)), function(i) fmt_pub(sub[i,])))
 }
 ```
-
-## Grants & Fellowships
-
-```{r, echo=FALSE, results='asis'}
-rows <- sapply(grants, function(x)
-  sprintf('<tr><td style="width:7rem;color:#666;vertical-align:top">%s</td>
-           <td><strong>%s</strong><br>%s · %s%s</td></tr>',
-          yr(x), x$title, x$role, x$funder,
-          if (!is.null(x$amount)) paste0(" · ", x$amount) else ""))
-cat_md("<table style='border:none'>", rows, "</table>")
-```
-
-## Honors & Awards
+# Honors & Awards
 
 ```{r, echo=FALSE, results='asis'}
 rows <- sapply(awards, function(x)
-  sprintf("<tr><td style='width:4rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
-          yr(x), x$name, x$org))
-cat_md("<table style='border:none'>", rows, "</table>")
+  sprintf("%s & %s, %s", ltx(yr(x)), ltx(x$name), ltx(x$org)))
+cat_md(two_col(rows))
 ```
 
-## Presentations
+# Grants & Fellowships
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(grants, function(x) {
+  amt <- if (!is.null(x$amount)) paste0(" $\\cdot$ ", ltx(x$amount)) else ""
+  sprintf("%s & \\textbf{%s}\\newline %s $\\cdot$ %s%s",
+          ltx(yr(x)), ltx(x$title), ltx(x$role), ltx(x$funder), amt)
+})
+cat_md(two_col(rows))
+```
+
+
+
+# Presentations
 
 ```{r, echo=FALSE, results='asis'}
 years <- sort(unique(sapply(talks, `[[`, "year")), decreasing = TRUE)
@@ -122,76 +226,73 @@ for (y in years) {
   cat_md(sprintf("\n**%s**\n\n", y))
   items <- sapply(yr_talks, function(x) {
     inv <- if (isTRUE(x$invited)) " *(Invited)*" else ""
-    sprintf('- "%s." %s, %s.%s\n', x$title, x$venue, x$location, inv)
+    sprintf('- \"%s.\" %s, %s.%s\n',
+            ltx(x$title), ltx(x$venue), ltx(x$location), inv)
   })
   cat_md(items)
 }
 ```
 
-## Teaching
+# Teaching
 
 ```{r, echo=FALSE, results='asis'}
-cat_md(sprintf("**%s**\n\n", teaching$institution))
+cat_md(sprintf("**%s**\n\n", ltx(teaching$institution)))
 cat_md("*Graduate*\n\n")
-cat_md(paste0("- ", teaching$graduate, "\n"))
+cat_md(paste0("- ", sapply(teaching$graduate, ltx), "\n"))
 cat_md("\n*Undergraduate*\n\n")
-cat_md(paste0("- ", teaching$undergraduate, "\n"))
+cat_md(paste0("- ", sapply(teaching$undergraduate, ltx), "\n"))
 ```
 
-## Service
-
-### Editorial Positions
-
-```{r, echo=FALSE, results='asis'}
-rows <- sapply(service$editorial, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s, <em>%s</em></td></tr>",
-          x$years, x$role, x$org))
-cat_md("<table style='border:none'>", rows, "</table>")
-```
-
-### Professional Associations
-
-```{r, echo=FALSE, results='asis'}
-rows <- sapply(service$professional_associations, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666;vertical-align:top'>%s</td><td>%s, %s</td></tr>",
-          x$years, x$role, x$org))
-cat_md("<table style='border:none'>", rows, "</table>")
-```
-
-### University Service
-
-```{r, echo=FALSE, results='asis'}
-cat_md("*Departmental*\n\n")
-rows <- sapply(service$university$departmental, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
-          x$years, x$role))
-cat_md("<table style='border:none'>", rows, "</table>")
-
-cat_md("\n*College-wide*\n\n")
-rows <- sapply(service$university$college_wide, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
-          x$years, x$role))
-cat_md("<table style='border:none'>", rows, "</table>")
-
-cat_md("\n*University-wide*\n\n")
-rows <- sapply(service$university$university_wide, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
-          x$years, x$role))
-cat_md("<table style='border:none'>", rows, "</table>")
-```
-
-### Graduate Advising
+## Graduate Advising
 
 ```{r, echo=FALSE, results='asis'}
 cat_md("*Dissertation Committee Chair*\n\n")
 rows <- sapply(service$advising$dissertation_chair, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s (%s)</td></tr>",
-          x$years, x$name, x$role))
-cat_md("<table style='border:none'>", rows, "</table>")
+  sprintf("%s & %s (%s)", ltx(x$years), ltx(x$name), ltx(x$role)))
+cat_md(two_col(rows))
 
 cat_md("\n*Dissertation Committee Member*\n\n")
 rows <- sapply(service$advising$dissertation_committee, function(x)
-  sprintf("<tr><td style='width:7rem;color:#666'>%s</td><td>%s</td></tr>",
-          x$years, x$name))
-cat_md("<table style='border:none'>", rows, "</table>")
+  sprintf("%s & %s", ltx(x$years), ltx(x$name)))
+cat_md(two_col(rows))
+
 ```
+
+# Service
+
+## Editorial Positions
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(service$editorial, function(x)
+  sprintf("%s & %s, \\emph{%s}", ltx(x$years), ltx(x$role), ltx(x$org)))
+cat_md(two_col(rows))
+```
+
+## Professional Associations
+
+```{r, echo=FALSE, results='asis'}
+rows <- sapply(service$professional_associations, function(x)
+  sprintf("%s & %s, %s", ltx(x$years), ltx(x$role), ltx(x$org)))
+cat_md(two_col(rows))
+```
+
+## University Service
+
+```{r, echo=FALSE, results='asis'}
+cat_md("*Departmental*\n\n")
+rows <- sapply(service$university$departmental, function(x)
+  sprintf("%s & %s", ltx(x$years), ltx(x$role)))
+cat_md(two_col(rows))
+
+cat_md("\n*College-wide*\n\n")
+rows <- sapply(service$university$college_wide, function(x)
+  sprintf("%s & %s", ltx(x$years), ltx(x$role)))
+cat_md(two_col(rows))
+
+cat_md("\n*University-wide*\n\n")
+rows <- sapply(service$university$university_wide, function(x)
+  sprintf("%s & %s", ltx(x$years), ltx(x$role)))
+cat_md(two_col(rows))
+```
+
+

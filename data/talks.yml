@@ -1,6 +1,12 @@
 # Conference presentations and invited talks
 # invited: true marks invited presentations
 
+- year: 2026
+  title: "The Status Trap: Examining Gender Disparities in Skill Signaling on LinkedIn"
+  venue: Hong Kong University
+  location: Hong Kong, China
+  invited: true
+
 - year: 2025
   title: "Stereotype or Status? Analyzing the Gender Disparities in Skill Signaling on LinkedIn"
   venue: American Sociological Association Annual Meeting

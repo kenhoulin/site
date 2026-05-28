@@ -5,14 +5,26 @@
 \documentclass[11pt, letterpaper]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{mathpazo}            % Palatino-style font, works with pdflatex
+\usepackage{XCharter}            % Charter serif, works with pdflatex
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
 \usepackage{hyperref}
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{parskip}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% Pandoc emits \tightlist in compact itemize lists.
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Pandoc 3 emits \begin{longtable*}; alias it to longtable.
+\makeatletter
+\expandafter\let\csname longtable*\endcsname\longtable
+\expandafter\let\csname endlongtable*\endcsname\endlongtable
+\makeatother
 
 \hypersetup{
   colorlinks=true,
@@ -26,14 +38,23 @@
 
 \setlist[itemize]{nosep, left=0pt}
 
+\setcounter{secnumdepth}{-1}  % no section/subsection numbering
+
+% Month-year timestamp ("May 2026") for header
+\newcommand{\monthyear}{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\year}
+
 \begin{document}
 
 % ── Header ───────────────────────────────────────────────────────────────────
 \begin{center}
   {\LARGE\textbf{Ken-Hou Lin}} \\[0.4em]
   Professor of Sociology $$\cdot$$ University of Texas at Austin \\
-  \href{mailto:kenhoulin@utexas.edu}{kenhoulin@utexas.edu} $$\cdot$$
-  \href{https://kenhoulin.info}{kenhoulin.info}
+  \href{mailto:lin@austin.utexas.edu}{lin@austin.utexas.edu} $$\cdot$$
+  \href{https://kenhoulin.info}{kenhoulin.info} \\[0.3em]
+  {\small\textit{Updated \monthyear{}}}
 \end{center}
 
 \vspace{0.5em}

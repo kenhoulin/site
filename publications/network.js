@@ -13,7 +13,7 @@
   if (!container) return;
 
   const width  = container.clientWidth  || 500;
-  const height = Math.round(width * 0.75);
+  const height = Math.min(Math.round(width * 0.55), 620);
 
   const svg = d3.select("#pub-network")
     .attr("width",  width)
@@ -31,17 +31,7 @@
     .style("pointer-events", "none")
     .style("opacity", 0);
 
-  // Detail panel (right side — injected on click)
-  const detailPanel = d3.select(".filter-panel").insert("div", ":first-child")
-    .attr("id", "node-detail")
-    .style("display", "none")
-    .style("margin-bottom", "1rem")
-    .style("padding", "0.75rem")
-    .style("border", "1px solid #ccc")
-    .style("border-radius", "4px")
-    .style("font-size", "0.85rem");
-
-  fetch("network.json")
+  fetch("publications/network.json")
     .then(r => r.json())
     .then(data => drawGraph(data))
     .catch(() => {
@@ -54,11 +44,16 @@
     window._networkNodes = nodes;
     window._networkEdges = edges;
 
+    // Node radius from citation count (sqrt scale so area ~ citations)
+    const maxCites = d3.max(nodes, d => d.citations || 0) || 1;
+    const rScale = d3.scaleSqrt().domain([0, maxCites]).range([5, 18]);
+    const nodeRadius = d => rScale(d.citations || 0);
+
     const simulation = d3.forceSimulation(nodes)
       .force("link",   d3.forceLink(edges).id(d => d.id).distance(60).strength(0.4))
       .force("charge", d3.forceManyBody().strength(-120))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collide", d3.forceCollide(10));
+      .force("collide", d3.forceCollide(d => nodeRadius(d) + 2));
 
     const link = svg.append("g").selectAll("line")
       .data(edges).join("line")
@@ -67,7 +62,7 @@
 
     const node = svg.append("g").selectAll("circle")
       .data(nodes).join("circle")
-      .attr("r", 7)
+      .attr("r", nodeRadius)
       .attr("fill", d => TYPE_COLOR[d.type] || TYPE_COLOR.other)
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
@@ -85,15 +80,17 @@
         tooltip.style("left", (event.pageX + 12) + "px").style("top", (event.pageY - 20) + "px");
       })
       .on("mouseout", () => tooltip.style("opacity", 0))
-      .on("click", (event, d) => showDetail(d));
+      .on("click", (event, d) => {
+        if (typeof window.showPubById === "function") window.showPubById(d.id);
+      });
 
     simulation.on("tick", () => {
       link
         .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
         .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
       node
-        .attr("cx", d => Math.max(8, Math.min(width  - 8, d.x)))
-        .attr("cy", d => Math.max(8, Math.min(height - 8, d.y)));
+        .attr("cx", d => { const r = nodeRadius(d); return Math.max(r, Math.min(width  - r, d.x)); })
+        .attr("cy", d => { const r = nodeRadius(d); return Math.max(r, Math.min(height - r, d.y)); });
     });
 
     // Expose handles for dimming from filter.js
@@ -101,18 +98,4 @@
     window._networkSvgLinks = link;
   }
 
-  function showDetail(d) {
-    const doi = d.doi ? `<a href="https://doi.org/${d.doi}" target="_blank">DOI</a>` : "";
-    const url = d.url ? `<a href="${d.url}" target="_blank">Link</a>` : "";
-    const links = [doi, url].filter(Boolean).join(" &nbsp; ");
-    detailPanel
-      .style("display", "block")
-      .html(`
-        <strong>${d.title}</strong><br>
-        <span style="color:#666">${d.year} · ${d.outlet || ""}</span><br>
-        ${d.abstract ? `<p style="margin:0.5rem 0">${d.abstract}</p>` : ""}
-        ${links}
-        <br><small style="color:#aaa">${(d.keywords || []).join(", ")}</small>
-      `);
-  }
 })();
