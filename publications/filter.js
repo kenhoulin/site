@@ -89,10 +89,19 @@
     const listEl  = document.getElementById("pub-list");
     if (!listEl) return;
 
-    // No filter selected → empty list with a prompt, no count
+    // No filter selected → show featured publications by default
     if (activeKw.size === 0) {
-      if (countEl) countEl.textContent = "";
-      listEl.innerHTML = '<p class="pub-empty">Select one or more topics to see related publications.</p>';
+      const featured = allPubs.filter(p => p.featured);
+      if (!featured.length) {
+        if (countEl) countEl.textContent = "";
+        listEl.innerHTML = '<p class="pub-empty">Select one or more topics to see related publications.</p>';
+        return;
+      }
+      if (countEl) countEl.textContent = "Featured publications";
+      const sortedFeatured = featured.slice().sort((a, b) =>
+        (b.citations || 0) - (a.citations || 0) || (b.year - a.year)
+      );
+      listEl.innerHTML = sortedFeatured.map(pubHtml).join("");
       return;
     }
 
