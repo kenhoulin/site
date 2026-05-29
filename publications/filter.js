@@ -4,7 +4,6 @@
 (function () {
   let allPubs   = [];
   let activeKw  = new Set();
-  let activeOut = new Set();
   let kwMode    = "and"; // "and" | "or"
 
   fetch("publications/publications.json")
@@ -134,7 +133,6 @@
 
   function pubHtml(p, opts = {}) {
     const doi = p.doi ? ` <a href="https://doi.org/${p.doi}" target="_blank" class="pub-link">[DOI]</a>` : "";
-    const pdf = p.pdf ? ` <a href="${p.pdf}" target="_blank" class="pub-link">[PDF]</a>` : "";
     const openAttr = opts.openAbstract ? " open" : "";
     const abs = p.abstract
       ? `<details class="pub-abstract"${openAttr}><summary>Abstract</summary><p>${p.abstract.replace(/\n\n+/g, "</p><p>")}</p></details>`
@@ -144,7 +142,7 @@
         <span class="pub-authors">${formatAuthorsASA(p.authors)}</span>. ${p.year}.
         <span class="pub-title">${p.title}</span>
         <span class="pub-venue"><em>${p.outlet || ""}</em></span>.
-        ${doi}${pdf}
+        ${doi}
         ${abs}
       </div>`;
   }
@@ -162,7 +160,7 @@
 
   function updateNetworkDimming(matchIds) {
     if (!window._networkSvgNodes) return;
-    const hasFilter = activeKw.size > 0 || activeOut.size > 0;
+    const hasFilter = activeKw.size > 0;
 
     window._networkSvgNodes
       .attr("opacity", d => (!hasFilter || matchIds.has(d.id)) ? 1 : 0.15);
