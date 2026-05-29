@@ -32,11 +32,13 @@
   // Tooltip
   const tooltip = d3.select("body").append("div")
     .style("position", "absolute")
-    .style("background", "#fff")
-    .style("border", "1px solid #ccc")
+    .style("background", "var(--bg)")
+    .style("color", "var(--ink)")
+    .style("border", "1px solid var(--rule)")
     .style("border-radius", "4px")
     .style("padding", "6px 10px")
     .style("font-size", "0.8rem")
+    .style("box-shadow", "0 2px 8px rgba(0,0,0,0.25)")
     .style("pointer-events", "none")
     .style("opacity", 0);
 
