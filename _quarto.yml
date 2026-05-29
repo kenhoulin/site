@@ -2,6 +2,8 @@ project:
   type: website
   pre-render: _quarto-pre-render.R
   output-dir: _site
+  render:
+    - "*.qmd"
   resources:
     - publications/network.json
     - publications/publications.json
@@ -9,9 +11,11 @@ project:
     - publications/filter.js
     - cv.pdf
     - assets/
+    - CNAME
 
 website:
   title: "Ken-Hou Lin"
+  favicon: assets/favicon.png
   navbar:
     pinned: true
     background: light
@@ -24,6 +28,10 @@ website:
         href: index.qmd#contact
       - text: CV
         href: cv.pdf
+        target: _blank
+    right:
+      - text: Google Scholar
+        href: "https://scholar.google.com/citations?user=4rlcdG0AAAAJ&hl=en"
         target: _blank
   page-footer:
     center: "Ken-Hou Lin · University of Texas at Austin"

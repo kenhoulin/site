@@ -107,10 +107,8 @@ quarto render
 #    _site/index.html   (the website)
 #    cv.pdf             (the CV — also copied into _site/)
 
-# 5. Deploy (see Section 9)
-git add -A
-git commit -m "Update publications" 
-git push          # Netlify rebuilds automatically (once connected)
+# 5. Deploy (see Section 9) — renders + publishes to GitHub Pages
+quarto publish gh-pages
 ```
 
 > **Tip:** `quarto preview` is your friend for the website. For the PDF CV,
@@ -178,9 +176,12 @@ on the graph:
   count for that paper.
 - **`abstract`**: optional. Shown on the website when you click a node. Blank
   lines = paragraph breaks (the build script handles this).
-- **`featured = {true}`**: optional. *(Currently parsed into the JSON but the
-  homepage has no "selected work" section, so it has no visible effect today.
-  Harmless to keep for the future.)*
+- **`featured = {true}`**: optional. Marks a paper as **featured**. On the
+  website's Research section, before you click any keyword chip, the publication
+  list defaults to showing your featured papers (newest first, ties broken by
+  citation count) under the heading "Featured publications." Once a chip is
+  selected the list switches to the keyword filter. If no paper is featured, the
+  default view just shows a "Select one or more topics…" prompt.
 - **`pages`**: use `400--430` (double dash); it's normalized to a single dash.
 
 ### 4c. Edit or remove a publication
@@ -347,7 +348,7 @@ These are **regenerated on every render**; editing them directly is pointless:
 - `publications/publications.json` — full publication list for the filter UI
 - `publications/openalex_cache.json` — cached citation counts (safe to delete to force a refresh)
 - `cv.pdf` and `cv.tex` — the rendered CV (`cv.tex` kept because `keep-tex: true`)
-- `_site/` — the complete website Netlify serves
+- `_site/` — the complete website (its contents are pushed to GitHub Pages)
 - `.quarto/` — Quarto's internal cache
 
 `_site/`, `.quarto/`, and R history files are git-ignored. The JSON files **are**
@@ -357,36 +358,59 @@ committed so the site can build even if OpenAlex is unreachable.
 
 ## 9. Deploying the Site
 
-The intended host is **Netlify**, auto-building from a GitHub repo on every push.
+The site is hosted on **GitHub Pages**, served from the `gh-pages` branch of the
+repo **github.com/kenhoulin/site**.
+Live URL: **https://kenhoulin.info** (custom domain, HTTPS enforced).
+The `github.io` URL now redirects here.
 
-> **Current status:** this repo has **no git remote configured yet** and Netlify
-> isn't connected. Until that's set up, "deploy" just means rendering locally.
-> The first-time setup below is a one-time task.
+**How it works:** you render locally (where R + Quarto are installed) and push
+only the *finished* site to GitHub. One command does both:
 
-### First-time setup (once)
-1. Create a repo on GitHub (private or public).
-2. Connect it locally:
-   ```bash
-   git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
-   ```
-3. In Netlify: **Add new site → Import from GitHub**, pick the repo.
-   - Build command: `quarto render`
-   - Publish directory: `_site`
-4. Netlify gives you a `*.netlify.app` URL — verify the site there first.
-5. Point `kenhoulin.info` DNS at Netlify (registrar nameservers or A/CNAME
-   records per Netlify's instructions). **Keep the old Google Site live until
-   the new one is confirmed working at the custom domain.**
+```bash
+quarto publish gh-pages
+```
+
+This renders the whole project, then pushes the contents of `_site/` to the
+`gh-pages` branch, which GitHub Pages serves. Your **source files stay on your
+computer only** — GitHub holds just the rendered website.
+
+> **Why not "build on push" (Netlify / GitHub Actions)?** Those cloud builders
+> don't have R or Quarto installed, so they can't run this project's pipeline (an
+> early attempt produced a broken 8-second "build" that served raw files).
+> Rendering locally and publishing the output sidesteps that entirely.
 
 ### Routine deploys (every time after)
-```bash
-git add -A
-git commit -m "describe what changed"
-git push
-```
-Netlify rebuilds automatically. Because Netlify runs `quarto render` itself, the
-JSON/PDF will regenerate in the cloud — but committing your locally-built
-versions is good insurance and keeps the repo self-consistent.
+1. Edit a source file (`.bib`, `.yml`, `index.qmd`, …).
+2. **Pause Google Drive syncing** (tray icon → gear → Pause syncing). The project
+   lives inside Google Drive, and Drive's file-locking can break the git steps
+   that `quarto publish` runs under the hood. (Resume when done.)
+3. In a terminal at the project root (e.g. RStudio's **Terminal** tab — not the R
+   Console):
+   ```bash
+   quarto publish gh-pages
+   ```
+   Answer `Y` if it asks to confirm. The render takes a minute or two.
+4. Wait ~2–3 minutes, then check https://kenhoulin.github.io/site/. (The publish
+   command may print "Deployment took longer than 5 minutes, giving up waiting" —
+   that's harmless; GitHub Pages finishes a bit after the command returns.)
+5. **Resume Google Drive syncing.**
+
+### Custom domain (DONE — for reference)
+`kenhoulin.info` is configured and serving over HTTPS. The setup, recorded here in
+case it ever needs redoing:
+
+- **DNS at Squarespace** (Domains → kenhoulin.info → DNS settings → Custom records):
+  - four `A` records on `@` → `185.199.108.153`, `185.199.109.153`,
+    `185.199.110.153`, `185.199.111.153` (GitHub Pages' IPs)
+  - one `CNAME` on `www` → `kenhoulin.github.io`
+- **In the project:** a `CNAME` file containing `kenhoulin.info`, listed under
+  `project: resources:` in `_quarto.yml` so every `quarto publish gh-pages` keeps
+  the domain (without it, publishing would wipe the domain and break the site).
+- **On GitHub:** Settings → Pages shows the custom domain verified, with
+  **Enforce HTTPS** turned on (free auto-renewing certificate).
+
+> If the domain ever "breaks" after an edit, the usual cause is a publish that
+> dropped the `CNAME` — confirm `CNAME` is still in `_quarto.yml` resources.
 
 ---
 
@@ -408,7 +432,7 @@ versions is good insurance and keeps the repo self-consistent.
 | Change graph look/behavior | `publications/network.js` | `quarto render` |
 | Reformat the PDF CV | `assets/cv-template.tex` / `cv.qmd` | `quarto render cv.qmd` |
 | Preview while editing | — | `quarto preview` |
-| Publish | commit + push | `git push` (Netlify auto-builds) |
+| Publish | — | `quarto publish gh-pages` |
 
 ---
 

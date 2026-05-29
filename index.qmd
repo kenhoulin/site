@@ -48,13 +48,11 @@ format:
 
 Welcome to my personal website!
 
-I'm Professor of Sociology at the University of Texas at Austin. My work studies the production of social inequality using statistical and computational methods.
+I'm Professor of Sociology at the University of Texas at Austin. I study how socio-economic transformations produce inequality across a range of settings — financial markets, workplaces, labor markets, and digital platforms — drawing on statistical and computational methods. Across these projects, I work to bring sociological theory and large-scale data into close conversation
 
-My books include *Divested: Inequality in the Age of Finance* (with Megan Tobias Neely, Oxford University Press, 2020) and *The Dating Divide: Race and Desire in the Era of Online Romance* (with Celeste Curington and Jennifer Lundquist, University of California Press, 2021). My work has been covered in the *New York Times*, *Washington Post*, *Harvard Business Review*, and *The New Republic*.
+I edit Socio-Economic Review, the official journal of the Society for the Advancement of Socio-Economics (SASE).
 
-I edit *Socio-Economic Review*, the official journal of the Society for the Advancement of Socio-Economics (SASE), and previously served as Deputy Editor at *Demography*.
-
-My current projects examine what large language models can reveal about labor markets, and what prediction markets tell us about how societies form beliefs about their own futures.
+My current projects ask how large language models can be implemented for social science research, and what prediction markets reveal about the relationship between price and value.
 
 :::
 
@@ -92,7 +90,7 @@ My current projects examine what large language models can reveal about labor ma
   <dd><a href="mailto:lin@austin.utexas.edu">lin@austin.utexas.edu</a></dd>
 
   <dt>Office</dt>
-  <dd>Department of Sociology<br>University of Texas at Austin</dd>
+  <dd>Population Research Center<br>University of Texas at Austin</dd>
 
   <dt>Mail</dt>
   <dd>305 E 23rd St, Stop G1800<br>Austin, TX 78712</dd>

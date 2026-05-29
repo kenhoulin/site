@@ -3,12 +3,7 @@
 # Called by _quarto-pre-render.R before each Quarto build.
 
 # Include all user libraries (covers packages installed under earlier minor versions)
-local({
-  base <- file.path(Sys.getenv("USERPROFILE"), "AppData", "Local", "R", "win-library")
-  libs <- list.dirs(base, recursive = FALSE, full.names = TRUE)
-  libs <- libs[dir.exists(libs)]
-  if (length(libs)) .libPaths(unique(c(libs, .libPaths())))
-})
+source("scripts/_libpaths.R")
 
 suppressPackageStartupMessages({
   library(bib2df)    # install.packages("bib2df")
@@ -53,7 +48,7 @@ bib <- bib2df(tmp_bib)
 names(bib) <- str_to_lower(names(bib))
 
 # ── Ensure optional columns exist (bib2df omits columns absent from all entries)
-for (col in c("doi", "url", "abstract", "keywords", "featured",
+for (col in c("doi", "abstract", "keywords", "featured",
               "journal", "publisher", "booktitle", "howpublished")) {
   if (!col %in% names(bib)) bib[[col]] <- NA_character_
 }
@@ -105,18 +100,17 @@ pubs <- bib |>
   mutate(
     id       = str_to_lower(bibtexkey),
     type     = { t <- bib_type_map[str_to_lower(category)]; if (is.na(t)) "other" else t },
-    outlet   = suppressWarnings(outlet_col(cur_data())),
+    outlet   = suppressWarnings(outlet_col(pick(category, journal, publisher, booktitle, howpublished))),
     kw_raw   = na_to_empty(.data[["keywords"]]),
     keywords = list(str_trim(str_split(kw_raw, "[;,]")[[1]])),
     doi      = na_to_empty(.data[["doi"]]),
-    url      = na_to_empty(.data[["url"]]),
     abstract = str_replace_all(na_to_empty(.data[["abstract"]]), PARA_MARK, "\n\n"),
     authors  = paste(unlist(author), collapse = "; "),
     featured = isTRUE(as.logical(na_to_empty(.data[["featured"]])))
   ) |>
   ungroup() |>
   mutate(citations = vapply(doi, fetch_openalex_citations, integer(1))) |>
-  select(id, title, authors, year, type, outlet, keywords, doi, url, abstract, featured, citations)
+  select(id, title, authors, year, type, outlet, keywords, doi, abstract, featured, citations)
 
 # Persist citation cache for next render
 write_json(cache, cache_path, auto_unbox = TRUE, pretty = TRUE)
@@ -131,7 +125,7 @@ message("Wrote ", pub_path, " (", nrow(pub_list), " entries)")
 
 # ── Compute pairwise edges (shared keywords) ────────────────────────────────
 nodes <- pub_list |>
-  select(id, title, year, type, outlet, keywords, doi, url, abstract, citations)
+  select(id, title, year, type, outlet, keywords, doi, abstract, citations)
 
 # explode keywords
 kw_long <- pubs |>

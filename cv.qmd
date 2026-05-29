@@ -10,12 +10,7 @@ format:
 ```{r setup, include=FALSE}
 library(yaml)
 # Ensure user libraries are visible (bib2df may be installed under another R minor)
-local({
-  base <- file.path(Sys.getenv("USERPROFILE"), "AppData", "Local", "R", "win-library")
-  libs <- list.dirs(base, recursive = FALSE, full.names = TRUE)
-  libs <- libs[dir.exists(libs)]
-  if (length(libs)) .libPaths(unique(c(libs, .libPaths())))
-})
+source("scripts/_libpaths.R")
 suppressPackageStartupMessages(library(bib2df))
 
 edu      <- yaml::read_yaml("data/education.yml")
@@ -196,6 +191,7 @@ for (t in types) {
   cat_md(sapply(seq_len(nrow(sub)), function(i) fmt_pub(sub[i,])))
 }
 ```
+
 # Honors & Awards
 
 ```{r, echo=FALSE, results='asis'}

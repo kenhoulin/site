@@ -4,7 +4,6 @@
 (function () {
   let allPubs   = [];
   let activeKw  = new Set();
-  let activeOut = new Set();
   let kwMode    = "and"; // "and" | "or"
 
   fetch("publications/publications.json")
@@ -89,18 +88,27 @@
     const listEl  = document.getElementById("pub-list");
     if (!listEl) return;
 
-    // No filter selected → empty list with a prompt, no count
+    // No filter selected → show featured publications by default
     if (activeKw.size === 0) {
-      if (countEl) countEl.textContent = "";
-      listEl.innerHTML = '<p class="pub-empty">Select one or more topics to see related publications.</p>';
+      const featured = allPubs.filter(p => p.featured);
+      if (!featured.length) {
+        if (countEl) countEl.textContent = "";
+        listEl.innerHTML = '<p class="pub-empty">Select one or more topics to see related publications.</p>';
+        return;
+      }
+      if (countEl) countEl.textContent = "Featured publications";
+      const sortedFeatured = featured.slice().sort((a, b) =>
+        (b.year - a.year) || (b.citations || 0) - (a.citations || 0)
+      );
+      listEl.innerHTML = sortedFeatured.map(pubHtml).join("");
       return;
     }
 
     if (countEl) countEl.textContent = `Showing ${pubs.length} of ${allPubs.length} publications`;
 
-    // Sort by citation count desc (most-cited first); fall back to year desc for ties
+    // Sort by recency (most recent first); fall back to citation count desc for ties
     const sorted = pubs.slice().sort((a, b) =>
-      (b.citations || 0) - (a.citations || 0) || (b.year - a.year)
+      (b.year - a.year) || (b.citations || 0) - (a.citations || 0)
     );
 
     listEl.innerHTML = sorted.map(pubHtml).join("");
@@ -125,7 +133,6 @@
 
   function pubHtml(p, opts = {}) {
     const doi = p.doi ? ` <a href="https://doi.org/${p.doi}" target="_blank" class="pub-link">[DOI]</a>` : "";
-    const pdf = p.pdf ? ` <a href="${p.pdf}" target="_blank" class="pub-link">[PDF]</a>` : "";
     const openAttr = opts.openAbstract ? " open" : "";
     const abs = p.abstract
       ? `<details class="pub-abstract"${openAttr}><summary>Abstract</summary><p>${p.abstract.replace(/\n\n+/g, "</p><p>")}</p></details>`
@@ -135,7 +142,7 @@
         <span class="pub-authors">${formatAuthorsASA(p.authors)}</span>. ${p.year}.
         <span class="pub-title">${p.title}</span>
         <span class="pub-venue"><em>${p.outlet || ""}</em></span>.
-        ${doi}${pdf}
+        ${doi}
         ${abs}
       </div>`;
   }
@@ -153,7 +160,7 @@
 
   function updateNetworkDimming(matchIds) {
     if (!window._networkSvgNodes) return;
-    const hasFilter = activeKw.size > 0 || activeOut.size > 0;
+    const hasFilter = activeKw.size > 0;
 
     window._networkSvgNodes
       .attr("opacity", d => (!hasFilter || matchIds.has(d.id)) ? 1 : 0.15);
