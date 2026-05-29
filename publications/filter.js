@@ -99,7 +99,7 @@
       }
       if (countEl) countEl.textContent = "Featured publications";
       const sortedFeatured = featured.slice().sort((a, b) =>
-        (b.citations || 0) - (a.citations || 0) || (b.year - a.year)
+        (b.year - a.year) || (b.citations || 0) - (a.citations || 0)
       );
       listEl.innerHTML = sortedFeatured.map(pubHtml).join("");
       return;
@@ -107,9 +107,9 @@
 
     if (countEl) countEl.textContent = `Showing ${pubs.length} of ${allPubs.length} publications`;
 
-    // Sort by citation count desc (most-cited first); fall back to year desc for ties
+    // Sort by recency (most recent first); fall back to citation count desc for ties
     const sorted = pubs.slice().sort((a, b) =>
-      (b.citations || 0) - (a.citations || 0) || (b.year - a.year)
+      (b.year - a.year) || (b.citations || 0) - (a.citations || 0)
     );
 
     listEl.innerHTML = sorted.map(pubHtml).join("");
