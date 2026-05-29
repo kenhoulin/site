@@ -188,9 +188,10 @@
     "type": "article",
     "outlet": "Social Currents",
     "keywords": ["guns", "methods"],
-    "doi": "10.1177/2329496517732041",
+    "doi": "10.1177/2329496517725334",
     "abstract": "Recent waves of legislation have made it much easier for gun owners to obtain a Concealed Handgun License (CHL) and thereby carry their guns in public except when explicitly prohibited. Because data are difficult to access, our understanding of who seeks and obtains such licenses remains limited. Using data obtained through Freedom of Information Act requests, this article fills this empirical gap by describing demographic trends and characteristics of applicants for CHLs in five states: Florida, Indiana, Massachusetts, Texas, and Utah. The results establish that (1) applications for CHLs are growing at fast rates; (2) there are significant gender and racial disparities in terms of who applies for CHLs, with men 2.9 to 5.5 times more likely to apply than women, and whites 1.3 to 2.0 times more likely to apply than blacks; (3) in Florida and Utah, these demographic gaps have widened over time; and (4) there are significant racial disparities in terms of application outcomes, with black applicants being 3.3 to 5.5 times more likely to be denied a license than white applicants. Moreover, we do not find the patterns in Massachusetts, a may-issue state, to be significantly different from the shall-issue states in our sample.",
-    "featured": false
+    "featured": false,
+    "citations": 22
   },
   {
     "id": "cobb2017growing",
