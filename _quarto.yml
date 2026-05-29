@@ -9,6 +9,7 @@ project:
     - publications/publications.json
     - publications/network.js
     - publications/filter.js
+    - theme.js
     - cv.pdf
     - assets/
     - CNAME
@@ -41,3 +42,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: false
+    anchor-sections: false   # no hover link-icons on headings (one-page site)

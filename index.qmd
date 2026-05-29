@@ -9,8 +9,15 @@ format:
       text: |
         <link rel="preconnect" href="https://rsms.me/">
         <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script>
+          // Apply a saved light/dark choice before first paint (no flash).
+          (function(){ try { var t = localStorage.getItem('theme');
+            if (t === 'dark' || t === 'light')
+              document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+        </script>
     include-after-body:
       text: |
+        <script src="theme.js"></script>
         <script src="publications/network.js"></script>
         <script src="publications/filter.js"></script>
         <script>
