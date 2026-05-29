@@ -1,5 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
-   Minimal modernist · accent: deep teal (#00695C)
+   Minimal modernist · palette from hero image (minhwa tiger):
+   teal-blue #2f6078 · gold #dca233 · terracotta #c0492e · sage #6f8b7e
    ───────────────────────────────────────────────────────────── */
 
 @import url('https://rsms.me/inter/inter.css');
@@ -12,9 +13,13 @@
   --rule-soft:  #efedea;
   --bg:         #ffffff;
   --bg-soft:    #f4f3f1;
-  --accent:     #00695C;
-  --accent-2:   #00897B;
-  --accent-tint:#e0f2f0;
+  /* Accent palette derived from the hero image (minhwa tiger) */
+  --accent:     #2f6078;   /* deep teal-blue ground */
+  --accent-2:   #3a7ea0;   /* lighter blue for hovers */
+  --accent-tint:#e3edf2;   /* pale blue tint */
+  --gold:       #dca233;   /* tiger gold */
+  --terracotta: #c0492e;   /* flame / outline red */
+  --sage:       #6f8b7e;   /* cloud sage */
   --radius:     2px;
   --maxw:       880px;
   --gutter:     max(2rem, 5vw);
@@ -223,7 +228,13 @@ header .navbar,
 .hero {
   text-align: center;
   padding: 5rem 0 4rem;
-  background: #eeece8;
+  /* Full-res image, washed out by a translucent white overlay so the
+     headshot and text stay legible. Raise the 0.82 alpha toward 1 for a
+     lighter (more faded) image; lower it to let more of the image show. */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
+    url(assets/hero-bg.png) center / cover no-repeat;
+  background-color: #eeece8;
   border-bottom: 1px solid var(--rule);
   animation: fadeUp 0.7s ease-out;
 }
@@ -237,14 +248,14 @@ header .navbar,
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #ffffff;
-  box-shadow: 0 0 0 1px rgba(0,105,92,0.15),
-              0 14px 36px -12px rgba(0,105,92,0.25);
+  box-shadow: 0 0 0 1px rgba(47,96,120,0.15),
+              0 14px 36px -12px rgba(47,96,120,0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .hero .hero-photo:hover {
   transform: scale(1.03);
   box-shadow: 0 0 0 2px var(--accent),
-              0 14px 36px -10px rgba(0,105,92,0.25);
+              0 14px 36px -10px rgba(47,96,120,0.25);
 }
 
 .hero h1 {
@@ -452,11 +463,11 @@ header .navbar,
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1a6fb3;
+  color: var(--accent);
   border: none;
 }
 .pub-entry a:hover {
-  color: #0d4f87;
+  color: var(--accent-2);
   text-decoration: underline;
 }
 
@@ -470,12 +481,12 @@ header .navbar,
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1a6fb3;
+  color: var(--accent);
   list-style: none;
   display: inline-block;
 }
 .pub-abstract > summary::-webkit-details-marker { display: none; }
-.pub-abstract > summary:hover { color: #0d4f87; text-decoration: underline; }
+.pub-abstract > summary:hover { color: var(--accent-2); text-decoration: underline; }
 .pub-abstract p {
   margin: 0.5rem 0;
   line-height: 1.5;
