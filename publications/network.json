@@ -166,7 +166,7 @@
     },
     {
       "id": "cobb2017growing",
-      "title": "Growing Apart: The Declining Firm-Size Wage Effect and Its Wage Inequality Consequence",
+      "title": "Growing Apart: The Changing Firm-Size Wage Premium and Its Inequality Consequences",
       "year": 2017,
       "type": "article",
       "outlet": "Organization Science",
@@ -313,9 +313,9 @@
       "type": "article",
       "outlet": "Social Science Research",
       "keywords": ["immigration", "labor-markets", "methods"],
-      "doi": "10.1016/j.ssresearch.2011.05.003",
+      "doi": "10.1016/j.ssresearch.2011.04.006",
       "abstract": "Using data from the US Current Population Surveys 2006–2008, I examine the weekly work hours of Mexican immigrants. Mexican immigrant workers on average work 2–4 h less than non-Hispanic whites per week, which contradicts the popular portrait of long immigrant work hours. Four mechanisms to explain this gap are proposed and examined. Results show that the work time disparity between non-Hispanic white and Mexican immigrant workers is explained by differences in human capital, ethnic concentration in the labor market, and selection process into employment. English proficiency has limited effect on work time after location in labor market is specified, while the effect of citizenship status remains robust.",
-      "citations": 12
+      "citations": 10
     }
   ],
   "edges": [
