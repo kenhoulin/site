@@ -134,6 +134,11 @@ pub_list <- pubs |>
   mutate(year = as.integer(year)) |>
   arrange(desc(year))
 
+# auto_unbox = TRUE would collapse a single-element keyword vector into a bare
+# string ("kw" instead of ["kw"]); wrapping each cell as a list forces jsonlite
+# to always emit a JSON array, which the front-end iterates with .forEach.
+pub_list$keywords <- lapply(pub_list$keywords, as.list)
+
 write_json(pub_list, pub_path, auto_unbox = TRUE, pretty = TRUE)
 message("Wrote ", pub_path, " (", nrow(pub_list), " entries)")
 

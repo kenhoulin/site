@@ -6,14 +6,20 @@
   let activeKw  = new Set();
   let kwMode    = "and"; // "and" | "or"
 
+  // Normalize keywords to always be an array. jsonlite's auto_unbox collapses a
+  // single-keyword vector to a bare string, which would otherwise break .forEach.
+  const asKeywords = k =>
+    Array.isArray(k) ? k : (k == null || k === "" ? [] : [k]);
+
   fetch("publications/publications.json")
     .then(r => r.json())
     .then(data => {
-      allPubs = data;
+      allPubs = (data || []).map(p => ({ ...p, keywords: asKeywords(p.keywords) }));
       buildChips();
       renderList([]); // start empty — only show pubs once a chip is selected
     })
-    .catch(() => {
+    .catch(err => {
+      console.error("filter.js: failed to load or render publications.json", err);
       document.getElementById("pub-list").innerHTML =
         '<p style="color:#888;font-size:0.85rem">Publication data not yet generated. Run <code>quarto render</code> after populating publications.bib.</p>';
     });

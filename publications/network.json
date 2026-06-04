@@ -6,7 +6,11 @@
       "year": 2026,
       "type": "article",
       "outlet": "Annual Review of Sociology",
-      "keywords": ["financialization", "inequality", "organizations"],
+      "keywords": [
+        "financialization",
+        "inequality",
+        "organizations"
+      ],
       "doi": "",
       "abstract": "Following the 2008 financial crisis, financialization has emerged as a central research program for analyzing the changing economy and its broader social consequences. This article examines recent scholarship on financialization and argues that this economic transformation has evolved substantially in the past two decades, demanding a more expansive analytical framework and new research directions. Focusing on the economy-wide organization of capital, we document three trends that characterize the contemporary manifestation of financialization in the United States: (a) rising intermediation by nonbank financial institutions, (b) growing investment in nontraditional financial assets, and (c) deepening household participation in the financial market as investors. These developments have wide implications regarding the stability of financial systems, the operation of businesses, and the distribution of economic resources across US society."
     },
@@ -16,7 +20,11 @@
       "year": 2026,
       "type": "chapter",
       "outlet": "Handbook on Gun Violence and Society",
-      "keywords": ["guns", "politics", "methods"],
+      "keywords": [
+        "guns",
+        "politics",
+        "methods"
+      ],
       "doi": "10.4337/9781035325207.00012",
       "abstract": "This study examines the potential asymmetry in attitudinal ambivalence with a sample of 2,554 college students across 20 college campuses. By “attitudinal ambivalence,” we refer to inconsistent or conflicting evaluation of guns across different dimensions. Specifically, we compare three dimensions of gun attitudes (policy, safety, and social) outlined in existing literature with both surveys and in-depth interviews.Our findings show that the three dimensions of gun attitudes are much more aligned among those who oppose than those who support gun control. Put differently, while most young adults who oppose gun control hold univalent attitudes about guns, those who support gun control often hold ambivalent attitudes: many who support stricter gun regulations simultaneously believe that gun ownership promotes safety and have positive views about gun owners.",
       "citations": 0
@@ -27,7 +35,12 @@
       "year": 2025,
       "type": "article",
       "outlet": "American Journal of Sociology",
-      "keywords": ["labor-markets", "organizations", "networks", "occupations", "mobility"],
+      "keywords": [
+        "labor-markets",
+        "organizations",
+        "occupations",
+        "mobility"
+      ],
       "doi": "10.1086/736439",
       "abstract": "This article proposes that workplaces are key sites for career exploration and development. By bringing together workers of distinct occupations, workplaces facilitate the exchange of information and skill, generating mobility resources for individuals to transition into other occupations. We examine the connection between workplace copresence and occupational mobility patterns with two studies. First, using a novel measure of occupation-establishment copresence, we find that the frequency of two occupations sharing the same workplace is robustly linked to the prevalence of between-occupation transitions in the United States. Second, using establishment-employee matched data in France, we show that individual mobility varies by workplace staffing pattern: Those with more coworkers in certain occupations are more likely to transition into these occupations, even after they exit the firm. Together, these results indicate that workplaces play a critical role in shaping occupational mobility.",
       "citations": 1
@@ -38,7 +51,12 @@
       "year": 2024,
       "type": "article",
       "outlet": "Annual Review of Sociology",
-      "keywords": ["race", "computational social science", "immigration", "gender"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "immigration",
+        "gender"
+      ],
       "doi": "10.1146/annurev-soc-083023-023534",
       "abstract": "While racial assortative mating and interracial unions have been a central interest in the study of race relations and family demography since the early twentieth century, there have been marked changes in the social contexts in which these processes have taken place in recent decades. This review article examines three important shifts: (a) the rise of population diversity and its impact on traditional views of racial integration, (b) the changing institution of marriage in American life, and (c) the increasing centrality of technology. We discuss how these societal shifts have challenged traditional understandings of preferences, opportunities, and intermediaries in the mate selection process, as well as new opportunities for interracial intimacy that these changes have introduced. We conclude with a discussion on conceptual issues and promising future research directions.",
       "citations": 12
@@ -49,7 +67,12 @@
       "year": 2023,
       "type": "article",
       "outlet": "Demography",
-      "keywords": ["race", "wealth", "financialization", "inequality"],
+      "keywords": [
+        "race",
+        "wealth",
+        "financialization",
+        "inequality"
+      ],
       "doi": "10.1215/00703370-11067778",
       "abstract": "Studies have examined the racial disparities in household characteristics, homeownership, and familial transfer as primary drivers of the Black–White wealth gap in the United States. This study assesses the importance of stock-linked assets in generating wealth inequality. As financial assets become a growing component of household portfolios, the Black–White wealth gap is increasingly associated with the racial disparity in stock-linked assets. Using data from the Survey of Consumer Finances and the Panel Study of Income Dynamics, this study shows that the contribution of stock-linked assets to the Black–White wealth gap has expanded in both absolute and relative terms, surpassing those of homeownership and business equity. Furthermore, a substantial disparity in financial wealth exists even for otherwise similar Black and White households. Although the disparity is larger among those with more economic resources, a gap remains among those with less. Lastly, our analysis shows that the combination of lower ownership levels and lower returns on financial wealth among Black households could account for a quarter of the Black–White wealth accumulation gap, net of differences in current net worth and household characteristics. Our findings suggest that considering financial assets is critical for understanding contemporary racial wealth inequality.",
       "citations": 8
@@ -60,7 +83,13 @@
       "year": 2022,
       "type": "article",
       "outlet": "American Journal of Sociology",
-      "keywords": ["labor-markets", "computational social science", "inequality", "occupations", "mobility"],
+      "keywords": [
+        "labor-markets",
+        "computational social science",
+        "inequality",
+        "occupations",
+        "mobility"
+      ],
       "doi": "10.1086/719407",
       "abstract": "Occupational structure is commonly viewed as either hierarchical or organized around stable classes. Yet, recent studies have proposed to describe occupational structure as a network, where the mobility of workers demarcates boundaries. Moving beyond boundary detection, this article develops occupational networks as a dynamic system in which between-occupation exchange is shaped by occupational similarities and occupational attributes are in turn responsive to mobility patterns. The authors illustrate this perspective with the exchange networks of detailed occupations. Their analysis shows that the U.S. occupational structure has become more fragmented. The division was in part associated with the emerging importance of age composition, as well as of quantitative, creative, and social tasks. The fragmentation reduced wage contagion and therefore contributed to a greater between-occupation wage dispersion. These results indicate that occupational attributes and mobility are coconstitutive and that a network perspective provides a unifying framework for the study of stratification and mobility.",
       "citations": 27
@@ -71,7 +100,11 @@
       "year": 2022,
       "type": "article",
       "outlet": "Sociological Perspectives",
-      "keywords": ["guns", "politics"],
+      "keywords": [
+        "guns",
+        "politics",
+        "methods"
+      ],
       "doi": "10.1177/07311214211021123",
       "abstract": "Existing scholarship usually presents people’s attitudes about guns as fixed and fully formed. Rarely are such attitudes examined as the outcome of social processes. As a result, while we know a great deal about what people think about guns, we know very little about the development of these beliefs. In this paper, we use a combination of surveys and life history interviews with a national sample of college students between the ages of 18 and 24 to examine how attitudes about guns develop in childhood and young adulthood. We find that while family gun ownership matters, positive attitudes about guns develop through active socialization that continues beyond childhood and is not reducible to family background. Relationships play a key role in this process, with changes in relationships often driving changes in attitudes about guns. Changes in attitudes about guns can take place in terms of both the content (what young adults think about guns) and the form (how young adults think about guns). In the transition to young adulthood, attitudes about guns develop from being articulated primarily as personal experiences connected to the activity of shooting guns or experiencing gun violence, to being articulated as political beliefs, connected to issues of regulation. These findings contribute to our understanding of gun attitudes by offering insights on not only what people think about guns but also how people come to think about guns in the ways that they do.",
       "citations": 13
@@ -82,7 +115,12 @@
       "year": 2021,
       "type": "book",
       "outlet": "University of California Press",
-      "keywords": ["race", "computational social science", "inequality", "gender"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "inequality",
+        "gender"
+      ],
       "doi": "10.1525/9780520966703",
       "abstract": "The Dating Divide is the first comprehensive look at \"digital-sexual racism,\" a distinct form of racism that is mediated and amplified through the impersonal and anonymous context of online dating. Drawing on large-scale behavioral data from a mainstream dating website, extensive archival research, and more than seventy-five in-depth interviews with daters of diverse racial backgrounds and sexual identities, Curington, Lundquist, and Lin illustrate how the seemingly open space of the internet interacts with the loss of social inhibition in cyberspace contexts, fostering openly expressed forms of sexual racism that are rarely exposed in face-to-face encounters. The Dating Divide is a fascinating look at how a contemporary conflux of individualization, consumerism, and the proliferation of digital technologies has given rise to a unique form of gendered racism in the era of swiping right—or left.\n\nThe internet is often heralded as an equalizer, a seemingly level playing field, but the digital world also acts as an extension of and platform for the insidious prejudices and divisive impulses that affect social politics in the \"real\" world. Shedding light on how every click, swipe, or message can be linked to the history of racism and courtship in the United States, this compelling study uses data to show the racial biases at play in digital dating spaces.\n\nHonorable Mention, Goode Book Award, ASA Family Section.",
       "citations": 6
@@ -93,7 +131,10 @@
       "year": 2021,
       "type": "article",
       "outlet": "Socius",
-      "keywords": ["labor-markets", "organizations"],
+      "keywords": [
+        "labor-markets",
+        "organizations"
+      ],
       "doi": "10.1177/2378023121992601",
       "abstract": "Previous studies have established that firm size is associated with a wage premium, but the wage premium has declined in recent decades. The authors examine the risk for unemployment by firm size during the initial outbreak of coronavirus disease 2019 in the United States. Using both yearly and state-month variation, the authors find greater excess unemployment among workers in small enterprises than among those in larger firms. The gaps cannot be entirely attributed to the sorting of workers or to industrial context. The firm size advantage is most pronounced in sectors with high remotability but reverses in the sectors most affected by the pandemic. Overall, these findings suggest that firm size is linked to greater job security and that the pandemic may have accelerated prior trends regarding product and labor market concentration. They also point out that the initial policy responses did not provide sufficient protection for workers in small and medium-sized businesses.",
       "citations": 14
@@ -104,7 +145,12 @@
       "year": 2020,
       "type": "book",
       "outlet": "Oxford University Press",
-      "keywords": ["financialization", "inequality", "organizations"],
+      "keywords": [
+        "financialization",
+        "inequality",
+        "organizations",
+        "labor-markets"
+      ],
       "doi": "10.1093/oso/9780190638313.001.0001",
       "abstract": "Finance is an inescapable part of American life. From how one pursues an education, buys a home, runs a business, or saves for retirement, finance orders the lives of ordinary Americans. And as finance continues to expand, inequality soars.\n\nIn Divested, Ken-Hou Lin and Megan Tobias Neely demonstrate why widening inequality cannot be understood without examining the rise of big finance. The growth of the financial sector has dramatically transformed the American economy by redistributing resources from workers and families into the hands of owners, executives, and financial professionals. The average American is now divested from a world driven by the maximization of financial profit.\n\nLin and Neely provide systematic evidence to document how the ascendance of finance on Wall Street, Main Street, and among households is a fundamental cause of economic inequality. They argue that finance has reshaped the economy in three important ways. First, the financial sector extracts resources from the economy at large without providing economic benefits to those outside the financial services industry. Second, firms in other economic sectors have become increasingly involved in lending and investing, which weakens the demand for labor and the bargaining power of workers. And third, the escalating consumption of financial products by households shifts risks and uncertainties once shouldered by unions, corporations, and governments onto families.\n\nA clear, comprehensive, and convincing account of the forces driving economic inequality in America, Divested warns us that the most damaging consequence of the expanding financial system is not simply recurrent financial crises but a widening social divide between the have and have-nots.\n\nFinalist, 2020 Robert W. Hamilton Book Awards. Translated into Traditional Chinese (2021) and Simplified Chinese (2024).",
       "citations": 84
@@ -115,7 +161,11 @@
       "year": 2020,
       "type": "article",
       "outlet": "Social Forces",
-      "keywords": ["gender", "labor-markets", "inequality"],
+      "keywords": [
+        "gender",
+        "labor-markets",
+        "inequality"
+      ],
       "doi": "10.1093/sf/soz142",
       "abstract": "Previous research has established the presence of a motherhood wage penalty in many developed societies; however, whether mothers face similar disadvantages in developing countries remains underexplored. This article argues that different intervening factors emerge when considering mothers’ labor compensation in developing contexts. Labor informality, a key characteristic of labor markets in developing countries, could play a significant role in shaping the wage consequence of motherhood. Using microdata from 43 national household surveys conducted between 2000 and 2017, we analyze five Latin American countries: Argentina, Brazil, Chile, Mexico, and Peru. After accounting for selection into employment and human capital, we find that mothers receive lower wages than childless women in all five countries. The penalties are similar to those found in some developed countries, ranging from 12 percent in Brazil to 21 percent in Chile. Mothers’ higher likelihood to work in the informal sector accounts for part of the wage gap.",
       "citations": 58
@@ -126,7 +176,11 @@
       "year": 2020,
       "type": "article",
       "outlet": "Race and Social Problems",
-      "keywords": ["race", "computational social science", "inequality"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "inequality"
+      ],
       "doi": "10.1007/s12552-020-09295-z",
       "abstract": "Building on previous work on US multiraciality, we analyze the messaging patterns of Asian-white, Hispanic-white, and black-white multiracial heterosexual users on one of the largest mainstream dating websites in the USA. We consider how multiracials’ online dating behaviors reflect, accommodate or challenge racialized desirability hierarchies among heterosexual daters. The study’s results illustrate that Hispanic-white multiracial men show similar preferences to both their multiracial and monoracial in-groups, while Asian-white and black-white multiracial men most prefer their multiracial counterparts. Hispanic-white multiracial women, on the other hand, privilege whiteness and multiraciality, while Asian-white multiracial women show most preference for their multiracial in-groups. Overall, our findings illustrate that both multiracial men and women’s online dating behaviors illustrate a linked privileging of white multiraciality while they also reinforce a hierarchical ranking of racial desirability anchored by anti-Blackness.",
       "citations": 12
@@ -137,7 +191,11 @@
       "year": 2019,
       "type": "article",
       "outlet": "Demography",
-      "keywords": ["immigration", "inequality", "labor-markets"],
+      "keywords": [
+        "immigration",
+        "inequality",
+        "labor-markets"
+      ],
       "doi": "10.1007/s13524-019-00828-9",
       "abstract": "This article assesses the connection between immigration and wage inequality in the United States. Departing from the focus on how the average wages of different native groups respond to immigration, the authors examine how immigrants shape the overall wage distribution. Despite evidence indicating that an increased presence of low-skilled immigrants is associated with losses at the lower end of the wage distribution, no similar result is observed between high-skilled immigrants and natives at the upper end. Instead, the presence of foreign-born workers — whether high- or low-skilled — is associated with substantial gains for high-wage natives, particularly those at the very top. Consequently, increased immigration is associated with greater wage dispersion.",
       "citations": 29
@@ -148,7 +206,11 @@
       "year": 2018,
       "type": "article",
       "outlet": "Socius",
-      "keywords": ["labor-markets", "health", "organizations"],
+      "keywords": [
+        "labor-markets",
+        "health",
+        "organizations"
+      ],
       "doi": "10.1177/2378023118798502",
       "abstract": "The decline of employment-based health plans is commonly attributed to rising premium costs. Using restricted data and a matched sample from the Medical Expenditure Panel Survey–Insurance Component, the authors extend previous studies by testing the relationships among premium costs, employment relationships, and the provision of health benefits between 1999 and 2012. The authors report that both establishment- and state-level union densities are associated with a higher likelihood of employers’ providing health plans, whereas right-to-work legislation is associated with lower provision. These factors combined rival rising premium cost in predicting offering. This finding indicates that the declining provision of health benefits could be in part driven by the transformation of the employment relationship in the United States and that labor unions may remain a critical force in sustaining employment-based coverage in the twenty-first century.",
       "citations": 7
@@ -159,7 +221,12 @@
       "year": 2018,
       "type": "article",
       "outlet": "Social Currents",
-      "keywords": ["guns", "methods"],
+      "keywords": [
+        "guns",
+        "methods",
+        "gender",
+        "race"
+      ],
       "doi": "10.1177/2329496517725334",
       "abstract": "Recent waves of legislation have made it much easier for gun owners to obtain a Concealed Handgun License (CHL) and thereby carry their guns in public except when explicitly prohibited. Because data are difficult to access, our understanding of who seeks and obtains such licenses remains limited. Using data obtained through Freedom of Information Act requests, this article fills this empirical gap by describing demographic trends and characteristics of applicants for CHLs in five states: Florida, Indiana, Massachusetts, Texas, and Utah. The results establish that (1) applications for CHLs are growing at fast rates; (2) there are significant gender and racial disparities in terms of who applies for CHLs, with men 2.9 to 5.5 times more likely to apply than women, and whites 1.3 to 2.0 times more likely to apply than blacks; (3) in Florida and Utah, these demographic gaps have widened over time; and (4) there are significant racial disparities in terms of application outcomes, with black applicants being 3.3 to 5.5 times more likely to be denied a license than white applicants. Moreover, we do not find the patterns in Massachusetts, a may-issue state, to be significantly different from the shall-issue states in our sample.",
       "citations": 22
@@ -170,7 +237,11 @@
       "year": 2017,
       "type": "article",
       "outlet": "Organization Science",
-      "keywords": ["labor-markets", "organizations", "inequality"],
+      "keywords": [
+        "labor-markets",
+        "organizations",
+        "inequality"
+      ],
       "doi": "10.1287/orsc.2017.1125",
       "abstract": "Wage inequality in the United States has risen dramatically over the past few decades, prompting scholars to develop a number of theoretical accounts for the upward trend. This study argues that large firms have been a prominent labor-market institution that mitigates inequality. By compensating their low- and middle-wage employees with a greater premium than their higher-wage counterparts, large U.S. firms reduced overall wage dispersion. Yet, broader changes to employment relations associated with the demise of internal labor markets and the emergence of alternative employment arrangements have undermined large firms’ role as an equalizing institution. Using data from the Current Population Survey and the Survey of Income and Program Participation, we find that in 1989, although all private-sector workers benefited from a firm-size wage premium, the premium was significantly higher for individuals at the lower end and middle of the wage distribution compared to those at the higher end. Between 1989 and 2014, the average firm-size wage premium declined markedly. The decline, however, was exclusive to those at the lower end and middle of the wage distribution, while there was no change for those at the higher end. As such, the uneven declines in the premium across the wage spectrum could account for about 20% of rising wage inequality during this period, suggesting that firms are of great importance to the study of rising inequality.",
       "citations": 97
@@ -181,7 +252,12 @@
       "year": 2017,
       "type": "article",
       "outlet": "Social Currents",
-      "keywords": ["gender", "financialization", "labor-markets", "inequality"],
+      "keywords": [
+        "gender",
+        "financialization",
+        "labor-markets",
+        "inequality"
+      ],
       "doi": "10.1177/2329496516686622",
       "abstract": "Previous research documents a growing wage premium for elite financial workers since the 1980s. A second line of research finds substantial gender disparities in earnings and career mobility among elite financial workers. Yet little is known about whether women in finance still receive a wage premium compared with their nonfinance counterparts. In addition, few studies examine whether similar gender disparities exist among nonelite financial workers. This article examines how the wage premium for working in the financial sector varies by gender and parental status across the wage distribution. We report that women earn a greater wage premium than men in low-wage financial jobs, while almost all of the increase in wages in high finance is captured by elite men, particularly fathers. Consequently, the financial sector simultaneously exacerbates and mitigates gender inequalities at different locations of the labor market. Our findings highlight the significance of institutional context in amplifying and attenuating the reward and penalty associated with gender and parental status.",
       "citations": 14
@@ -192,7 +268,11 @@
       "year": 2016,
       "type": "article",
       "outlet": "Organization Science",
-      "keywords": ["financialization", "organizations", "labor-markets"],
+      "keywords": [
+        "financialization",
+        "organizations",
+        "labor-markets"
+      ],
       "doi": "10.1287/orsc.2016.1073",
       "abstract": "This article sheds light on the ongoing employment stagnation in the United States by investigating the links between the rise of finance and firm employment dynamics during the 1982–2005 period. I argue that the rise of finance marginalized the role of labor in revenue generating and sharing processes, which led to employment stagnation among the largest nonfinancial firms in the United States. Evidence suggests that increasing investment in financial assets depresses the workforce size. The growing dependence on debt reprioritizes the order of distribution, heightening the need for workforce reduction. The increasing rewards for shareholders generate a downsize-and-distribute spiral, in which labor expense becomes a primary target of cost-cutting strategies. Further analysis indicates that production and service workers are more vulnerable to shifts associated with the rise of finance than managers and professionals.",
       "citations": 85
@@ -203,7 +283,11 @@
       "year": 2015,
       "type": "article",
       "outlet": "Social Forces",
-      "keywords": ["financialization", "labor-markets", "inequality"],
+      "keywords": [
+        "financialization",
+        "labor-markets",
+        "inequality"
+      ],
       "doi": "10.1093/sf/sou132",
       "abstract": "Using both cross-sectional and panel data, this article revisits the evolution of the financial premium between 1970 and 2011 with a distributional approach. I report that above-market compensation was present in the finance sector in the 1970s, but concentrated mostly at the bottom of the earnings distribution. The financial premium observed since the 1980s, however, is largely driven by excessive compensation at the top, a development that increasingly contributes to the national concentration of earnings. Furthermore, the analysis suggests that the financial premium for top earners remained robust in the early 2000s, when deregulation slowed down, and in the aftermath of the recent financial meltdown. These findings are inconsistent with the account that the earnings differential is driven by unobserved skill difference and demand shocks but supportive of the institutional account of rising inequality.",
       "citations": 42
@@ -214,7 +298,9 @@
       "year": 2015,
       "type": "article",
       "outlet": "Socio-Economic Review",
-      "keywords": ["financialization", "inequality"],
+      "keywords": [
+        "financialization"
+      ],
       "doi": "10.1093/ser/mwv009",
       "abstract": "We explore the consequences of increased financial investment by non-financial firms, finding consistent evidence that financialization in the non-finance sector reduced economic growth in that sector. Employing an expanded conceptualization of value added which identifies internal (capital, labour) and external (creditors, government, charities) stakeholders with claims on the value generated in production and exchange, we find that the declining value added produced by financialization was born most strikingly by labour and the state, while increasing value was channelled to corporate debt and equity holders. Corporate charities also had a net gain associated with increased financial investments by the non-financial firms.",
       "citations": 125
@@ -225,7 +311,12 @@
       "year": 2015,
       "type": "article",
       "outlet": "American Sociological Review",
-      "keywords": ["race", "computational social science", "inequality", "gender"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "inequality",
+        "gender"
+      ],
       "doi": "10.1177/0003122415591268",
       "abstract": "The U.S. multiracial population has grown substantially in the past decades, yet little is known about how these individuals are positioned in the racial hierarchies of the dating market. Using data from one of the largest dating websites in the United States, we examine how monoracial daters respond to initial messages sent by multiracial daters with various White/non-White racial and ethnic makeups. We test four different theories: hypodescent, multiracial in-betweenness, White equivalence, and what we call a multiracial dividend effect. We find no evidence for the operation of hypodescent. Asian-White daters, in particular, are afforded a heightened status, and Black-White multiracials are treated as an in-between group. For a few specific multiracial gender groups, we find evidence for a dividend effect, where multiracial men and women are preferred above all other groups, including Whites.",
       "citations": 72
@@ -236,7 +327,12 @@
       "year": 2015,
       "type": "article",
       "outlet": "Social Forces",
-      "keywords": ["race", "computational social science", "gender", "inequality"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "gender",
+        "inequality"
+      ],
       "doi": "10.1093/sf/sov008",
       "abstract": "A drawback to research on interracial couplings is that it almost exclusively studies heterosexual relationships. However, compelling new evidence from analyses using the Census shows that interracial relationships are significantly more common among the gay population. It is unclear how much of this reflects weaker racial preference or more limited dating markets. This paper examines the interactions of white gay and straight online daters who have access to a large market of potential partners by modeling dyadic messaging behaviors. Results show that racial preferences are highly gendered, and do not line up neatly by gay or straight identity. White lesbians and straight men show the weakest same-race preference, followed by gay men, while straight women show the strongest same-race preference. Put differently, minority men are discriminated to a greater degree than minority women in both same-sex and different-sex dating markets. These results suggest that white gay men's higher rates of interracial cohabitation are driven more by constrained dating markets, while lesbians' appear to be driven by more open racial preferences.",
       "citations": 75
@@ -247,7 +343,11 @@
       "year": 2014,
       "type": "article",
       "outlet": "Social Science Research",
-      "keywords": ["immigration", "race", "inequality"],
+      "keywords": [
+        "immigration",
+        "race",
+        "inequality"
+      ],
       "doi": "10.1016/j.ssresearch.2013.12.013",
       "abstract": "Longitudinal event history data from two waves of the Los Angeles Family and Neighborhood Survey are used to explore racial, ethnic, and documentation status differences in access to desirable neighborhoods. We first find that contrary to recent findings, undocumented Latinos do not replace blacks at the bottom of the locational attainment hierarchy. Whites continue to end up in neighborhoods that are less poor and whiter than minority groups, while all minorities, including undocumented Latinos, end up in neighborhoods that are of similar quality. Second, the effects of socioeconomic status for undocumented Latinos are either similar to or weaker than disadvantaged blacks. These findings suggest that living in less desirable neighborhoods is a fate disproportionately borne by non-white Los Angeles residents and that in some limited ways, the penalty attached to being undocumented Latino might actually be greater than the penalty attached to being black.",
       "citations": 13
@@ -258,7 +358,10 @@
       "year": 2013,
       "type": "article",
       "outlet": "American Journal of Sociology",
-      "keywords": ["financialization", "inequality"],
+      "keywords": [
+        "financialization",
+        "inequality"
+      ],
       "doi": "10.1086/669499",
       "abstract": "Focusing on U.S. nonfinance industries, we examine the connection between financialization and rising income inequality. We argue that the increasing reliance on earnings realized through financial channels decoupled the generation of surplus from production, strengthening owners’ and elite workers’ negotiating power relative to other workers. The result was an incremental exclusion of the general workforce from revenue-generating and compensation-setting processes. Using time-series cross-section data at the industry level, we find that increasing dependence on financial income, in the long run, is associated with reducing labor’s share of income, increasing top executives’ share of compensation, and increasing earnings dispersion among workers. Net of conventional explanations such as deunionization, globalization, technological change, and capital investment, the effects of financialization on all three dimensions of income inequality are substantial. Our counterfactual analysis suggests that financialization could account for more than half of the decline in labor’s share of income, 9.6% of the growth in officers’ share of compensation, and 10.2% of the growth in earnings dispersion between 1970 and 2008.\n\nWinner of the 2014 ASA Outstanding Article Award, Inequality, Poverty, and Mobility section.",
       "citations": 542
@@ -269,7 +372,12 @@
       "year": 2013,
       "type": "article",
       "outlet": "American Journal of Sociology",
-      "keywords": ["race", "computational social science", "gender", "inequality"],
+      "keywords": [
+        "race",
+        "computational social science",
+        "gender",
+        "inequality"
+      ],
       "doi": "10.1086/673129",
       "abstract": "In this article, the authors examine how race, gender, and education jointly shape interaction among heterosexual Internet daters. They find that racial homophily dominates mate-searching behavior for both men and women. A racial hierarchy emerges in the reciprocating process. Women respond only to men of similar or more dominant racial status, while nonblack men respond to all but black women. Significantly, the authors find that education does not mediate the observed racial preferences among white men and white women. White men and white women with a college degree are more likely to contact and to respond to white daters without a college degree than they are to black daters with a college degree.",
       "citations": 216
@@ -280,7 +388,10 @@
       "year": 2013,
       "type": "article",
       "outlet": "North Carolina Banking Institute Journal",
-      "keywords": ["financialization", "inequality"],
+      "keywords": [
+        "financialization",
+        "inequality"
+      ],
       "doi": "",
       "abstract": "The U.S. is now a financialized economy, where the financial sector and its priorities have become increasingly dominant in all aspects of the economy. We focus on financialization as a process of income redistribution with two faces. The first face is one of rent seeking by an increasingly concentrated and politically influential finance sector. This rent seeking has been successful, leading to the pooling of profits and income in the finance sector. The second face is a shift in behavior of non-finance firms away from production and non-financial services and toward financial investments and services. This shift has had both strategic and normative components and has reduced the bargaining power of labor and the centrality of production. As a consequence, financialization of the non-finance sector has led to lower employment, income transfers to executives and capital owners, and increased inequality among workers. We discuss the policy implications of these consequences at the end of this article."
     },
@@ -290,7 +401,10 @@
       "year": 2012,
       "type": "article",
       "outlet": "Social Science Research",
-      "keywords": ["methods", "labor-markets"],
+      "keywords": [
+        "methods",
+        "labor-markets"
+      ],
       "doi": "10.1016/j.ssresearch.2011.11.013",
       "abstract": "Previous studies find that workers of longer work weeks report more market hours in stylized measure than in time diary, while those of shorter work weeks report fewer hours. Using data from the American Time Use Survey (ATUS) 2003–2007, this paper attempts to explain this dilemma. I argue that market work time is composed of activity time, committed time, and constrained time. Thus, part of the difference found between the two estimates is due to the calculation of the diary estimate. I also argue that the wording of the stylized question is consequential. Some stylized questions (e.g., How many hours per week do you usually work?) might capture the mode, instead of the mean, of work time. Thus, when the distribution of work time is skewed, the mismatch between the two estimates is expected. A sequence-based identification for diary estimate and a non-parametric adjustment for stylized estimate are proposed and empirically examined. The result indicates that both methods significantly reduce the observed gap between the two estimates. I discuss the implications for future time use survey design in the concluding section.",
       "citations": 10
@@ -301,7 +415,10 @@
       "year": 2011,
       "type": "article",
       "outlet": "American Sociological Review",
-      "keywords": ["financialization", "inequality"],
+      "keywords": [
+        "financialization",
+        "inequality"
+      ],
       "doi": "10.1177/0003122411414827",
       "abstract": "The 2008 collapse of the world financial system, while proximately linked to the housing bubble and risk-laden mortgage backed securities, was a consequence of the financialization of the U.S. economy since the 1970s. This article examines the institutional and income dynamics associated with the financialization of the U.S. economy, advancing a sociological explanation of income shifts into the finance sector. Complementary developments include banking deregulation, finance industry concentration, increased size and scope of institutional investors, the shareholder value movement, and dominance of the neoliberal policy model. As a result, we estimate that between 5.8 and 6.6 trillion dollars were transferred to the finance sector since 1980. We conclude that understanding inequality dynamics requires attention to market institutions and politics.",
       "citations": 299
@@ -312,7 +429,11 @@
       "year": 2011,
       "type": "article",
       "outlet": "Social Science Research",
-      "keywords": ["immigration", "labor-markets", "methods"],
+      "keywords": [
+        "immigration",
+        "labor-markets",
+        "methods"
+      ],
       "doi": "10.1016/j.ssresearch.2011.04.006",
       "abstract": "Using data from the US Current Population Surveys 2006–2008, I examine the weekly work hours of Mexican immigrants. Mexican immigrant workers on average work 2–4 h less than non-Hispanic whites per week, which contradicts the popular portrait of long immigrant work hours. Four mechanisms to explain this gap are proposed and examined. Results show that the work time disparity between non-Hispanic white and Mexican immigrant workers is explained by differences in human capital, ethnic concentration in the labor market, and selection process into employment. English proficiency has limited effect on work time after location in labor market is specified, while the effect of citizenship status remains robust.",
       "citations": 10
@@ -387,7 +508,7 @@
     {
       "source": "cobb2017growing",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "cobb2017growing",
@@ -427,11 +548,6 @@
     {
       "source": "cobb2017growing",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "cobb2017growing",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -516,17 +632,17 @@
     },
     {
       "source": "cort2014residential",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "cort2014residential",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "cort2014residential",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "cort2014residential",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -601,17 +717,17 @@
     },
     {
       "source": "curington2015positioning",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "curington2015positioning",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2015positioning",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2015positioning",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -681,17 +797,17 @@
     },
     {
       "source": "curington2020tipping",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "curington2020tipping",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2020tipping",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2020tipping",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -756,17 +872,17 @@
     },
     {
       "source": "curington2021dating",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "curington2021dating",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2021dating",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2021dating",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -806,6 +922,11 @@
     },
     {
       "source": "lin2011less",
+      "target": "lin2020divested",
+      "weight": 1
+    },
+    {
+      "source": "lin2011less",
       "target": "lin2021firm",
       "weight": 1
     },
@@ -827,6 +948,11 @@
     {
       "source": "lin2011less",
       "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2011less",
+      "target": "shapira2022attitudes",
       "weight": 1
     },
     {
@@ -866,6 +992,11 @@
     },
     {
       "source": "lin2012revisiting",
+      "target": "lin2020divested",
+      "weight": 1
+    },
+    {
+      "source": "lin2012revisiting",
       "target": "lin2021firm",
       "weight": 1
     },
@@ -882,6 +1013,11 @@
     {
       "source": "lin2012revisiting",
       "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2012revisiting",
+      "target": "shapira2022attitudes",
       "weight": 1
     },
     {
@@ -957,7 +1093,7 @@
     {
       "source": "lin2013financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2013financialization",
@@ -1011,17 +1147,17 @@
     },
     {
       "source": "lin2013mate",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "lin2013mate",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "lin2013mate",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2013mate",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -1052,7 +1188,7 @@
     {
       "source": "lin2015financial",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2015financial",
@@ -1097,7 +1233,7 @@
     {
       "source": "lin2015financial",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2015financial",
@@ -1122,7 +1258,7 @@
     {
       "source": "lin2016rise",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2016rise",
@@ -1182,7 +1318,7 @@
     {
       "source": "lin2017gender",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2017gender",
@@ -1221,6 +1357,11 @@
     },
     {
       "source": "lin2017gender",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2017gender",
       "target": "tomaskovicdevey2011income",
       "weight": 2
     },
@@ -1232,7 +1373,7 @@
     {
       "source": "lin2017gender",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2017gender",
@@ -1247,7 +1388,7 @@
     {
       "source": "lin2018union",
       "target": "lin2020divested",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2018union",
@@ -1277,7 +1418,7 @@
     {
       "source": "lin2019immigration",
       "target": "lin2020divested",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2019immigration",
@@ -1326,23 +1467,18 @@
     },
     {
       "source": "lin2019immigration",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2019immigration",
       "target": "villanueva2020motherhood",
       "weight": 2
     },
     {
       "source": "lin2020divested",
       "target": "lin2021firm",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
       "target": "lin2022network",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
@@ -1352,7 +1488,7 @@
     {
       "source": "lin2020divested",
       "target": "lin2025contagion",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
@@ -1377,12 +1513,12 @@
     {
       "source": "lin2020divested",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2020divested",
       "target": "villanueva2020motherhood",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2021firm",
@@ -1441,11 +1577,6 @@
     },
     {
       "source": "lin2022network",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2022network",
       "target": "villanueva2020motherhood",
       "weight": 2
     },
@@ -1466,6 +1597,11 @@
     },
     {
       "source": "lin2023rising",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2023rising",
       "target": "tomaskovicdevey2011income",
       "weight": 2
     },
@@ -1477,7 +1613,7 @@
     {
       "source": "lin2023rising",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2023rising",
@@ -1512,7 +1648,7 @@
     {
       "source": "lin2026financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2026financialization",
@@ -1526,6 +1662,11 @@
     },
     {
       "source": "lundquist2015love",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "lundquist2015love",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
@@ -1536,12 +1677,12 @@
     },
     {
       "source": "lundquist2015love",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
+      "target": "villanueva2020motherhood",
+      "weight": 2
     },
     {
-      "source": "lundquist2015love",
-      "target": "villanueva2020motherhood",
+      "source": "lundquist2024interracial",
+      "target": "shapira2018concealed",
       "weight": 2
     },
     {
@@ -1552,7 +1693,7 @@
     {
       "source": "shapira2018concealed",
       "target": "shapira2022attitudes",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "shapira2018concealed",
@@ -1560,9 +1701,14 @@
       "weight": 2
     },
     {
+      "source": "shapira2018concealed",
+      "target": "villanueva2020motherhood",
+      "weight": 1
+    },
+    {
       "source": "shapira2022attitudes",
       "target": "shapira2026ambivalence",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "tomaskovicdevey2011income",
@@ -1572,7 +1718,7 @@
     {
       "source": "tomaskovicdevey2011income",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "tomaskovicdevey2011income",
@@ -1582,15 +1728,10 @@
     {
       "source": "tomaskovicdevey2013financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
-    },
-    {
-      "source": "tomaskovicdevey2013financialization",
-      "target": "villanueva2020motherhood",
       "weight": 1
     },
     {
-      "source": "tomaskovicdevey2015financialization",
+      "source": "tomaskovicdevey2013financialization",
       "target": "villanueva2020motherhood",
       "weight": 1
     }
