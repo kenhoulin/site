@@ -5,8 +5,22 @@
 # Include all user libraries (covers packages installed under earlier minor versions)
 source("scripts/_libpaths.R")
 
+ensure_packages <- function(pkgs, repos = "https://cloud.r-project.org") {
+  missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+  if (length(missing)) {
+    message("Installing missing packages: ", paste(missing, collapse = ", "))
+    install.packages(missing, repos = repos)
+    still_missing <- missing[!vapply(missing, requireNamespace, logical(1), quietly = TRUE)]
+    if (length(still_missing)) {
+      stop("Failed to install: ", paste(still_missing, collapse = ", "))
+    }
+  }
+}
+
+ensure_packages(c("bib2df", "dplyr", "tidyr", "jsonlite", "stringr", "httr"))
+
 suppressPackageStartupMessages({
-  library(bib2df)    # install.packages("bib2df")
+  library(bib2df)
   library(dplyr)
   library(tidyr)
   library(jsonlite)

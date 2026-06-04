@@ -55,7 +55,7 @@ format:
 
 Welcome to my personal website!
 
-I'm Professor of Sociology at the University of Texas at Austin. I study how socio-economic transformations produce inequality across a range of settings — financial markets, workplaces, labor markets, and digital platforms — drawing on statistical and computational methods. Across these projects, I work to bring sociological theory and large-scale data into close conversation
+I study how socio-economic transformations produce inequality across a range of settings — financial markets, workplaces, labor markets, and digital platforms — drawing on statistical and computational methods. Across these projects, I work to bring sociological theory and large-scale data into close conversation
 
 I edit Socio-Economic Review, the official journal of the Society for the Advancement of Socio-Economics (SASE).
 

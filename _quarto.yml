@@ -35,7 +35,7 @@ website:
         href: "https://scholar.google.com/citations?user=4rlcdG0AAAAJ&hl=en"
         target: _blank
   page-footer:
-    center: "Ken-Hou Lin · University of Texas at Austin"
+    center: "Ken-Hou Lin"
 
 format:
   html:
