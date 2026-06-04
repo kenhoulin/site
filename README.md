@@ -1,7 +1,7 @@
 # kenhoulin.info — Academic Website
 
 Personal academic website for Ken-Hou Lin, Professor of Sociology at UT Austin.
-Built with [Quarto](https://quarto.org). Hosted on Netlify at `kenhoulin.info`.
+Built with [Quarto](https://quarto.org). Hosted on GitHub Pages at `kenhoulin.info`.
 
 ## Quick start
 
@@ -40,5 +40,12 @@ Edit `publications/publications.bib` directly, then `quarto render` to rebuild.
 
 ## Deployment
 
-Connected to Netlify. Pushing to `main` triggers an automatic build
-(`quarto render`, publish dir `_site`).
+Hosted on GitHub Pages. There is no CI build — deploy manually from a clean
+working tree:
+
+```bash
+quarto publish gh-pages   # renders, then pushes _site/ to the gh-pages branch
+```
+
+GitHub Pages serves the `gh-pages` branch at `kenhoulin.info` (see `CNAME`).
+Commit source changes to `main` separately; only `gh-pages` is the live site.
