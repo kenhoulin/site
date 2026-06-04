@@ -1,5 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
-   Minimal modernist · accent: deep teal (#00695C)
+   Minimal modernist · palette from hero image (minhwa tiger):
+   teal-blue #2f6078 · gold #dca233 · terracotta #c0492e · sage #6f8b7e
    ───────────────────────────────────────────────────────────── */
 
 @import url('https://rsms.me/inter/inter.css');
@@ -8,16 +9,83 @@
   --ink:        #0a0a0a;
   --ink-soft:   #404040;
   --ink-muted:  #737373;
-  --rule:       #e7e7e7;
-  --rule-soft:  #f1f1f1;
+  --rule:       #e3e1dd;
+  --rule-soft:  #efedea;
   --bg:         #ffffff;
-  --bg-soft:    #fafafa;
-  --accent:     #00695C;
-  --accent-2:   #00897B;
-  --accent-tint:#e0f2f0;
+  --bg-soft:    #f4f3f1;
+  /* Accent palette derived from the hero image (minhwa tiger) */
+  --accent:     #2f6078;   /* deep teal-blue ground */
+  --accent-2:   #3a7ea0;   /* lighter blue for hovers */
+  --accent-tint:#e3edf2;   /* pale blue tint */
+  --gold:       #dca233;   /* tiger gold */
+  --terracotta: #c0492e;   /* flame / outline red */
+  --sage:       #6f8b7e;   /* cloud sage */
+  /* Network-graph node colors (read by network.js) */
+  --node-article: #2f6078;
+  --node-book:    #dca233;
+  --node-chapter: #c0492e;
+  --node-other:   #6f8b7e;
+  --node-stroke:  #ffffff;
+  --node-link:    #cccccc;
+  /* Navbar + hero, theme-specific */
+  --navbar-bg:    rgba(255,255,255,0.92);
+  --hero-overlay: rgba(255,255,255,0.82);  /* white wash in light mode */
+  --hero-fallback:#eeece8;
+  --hero-text-shadow: 0 1px 2px rgba(255,255,255,0.55);
   --radius:     2px;
   --maxw:       880px;
   --gutter:     max(2rem, 5vw);
+}
+
+/* ── Dark theme ─────────────────────────────────────────────────
+   Applied when the visitor's OS prefers dark (unless they've forced
+   light), or when they explicitly choose dark via the navbar toggle.
+   Values share one declaration list duplicated across both selectors. */
+:root[data-theme="dark"] {
+  --ink:        #eae4d6;   /* warm cream */
+  --ink-soft:   #c4c0b2;
+  --ink-muted:  #8a9ea0;
+  --rule:       #36545e;
+  --rule-soft:  #2a4651;
+  --bg:         #15323f;   /* deep teal-navy (tiger ground) */
+  --bg-soft:    #1b3c4b;
+  --accent:     #dca233;   /* gold reads best on the dark teal */
+  --accent-2:   #e8b95a;
+  --accent-tint:#243f4b;
+  --node-article: #5b93b4; /* lightened so nodes show on dark bg */
+  --node-book:    #e0a93a;
+  --node-chapter: #d4623f;
+  --node-other:   #88a89a;
+  --node-stroke:  #1b3c4b;
+  --node-link:    #5a7884;
+  --navbar-bg:    rgba(16,38,49,0.92);
+  --hero-overlay: rgba(16,38,49,0.42); /* dark scrim instead of white wash */
+  --hero-fallback:#15323f;
+  --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink:        #eae4d6;
+    --ink-soft:   #c4c0b2;
+    --ink-muted:  #8a9ea0;
+    --rule:       #36545e;
+    --rule-soft:  #2a4651;
+    --bg:         #15323f;
+    --bg-soft:    #1b3c4b;
+    --accent:     #dca233;
+    --accent-2:   #e8b95a;
+    --accent-tint:#243f4b;
+    --node-article: #5b93b4;
+    --node-book:    #e0a93a;
+    --node-chapter: #d4623f;
+    --node-other:   #88a89a;
+    --node-stroke:  #1b3c4b;
+    --node-link:    #5a7884;
+    --navbar-bg:    rgba(16,38,49,0.92);
+    --hero-overlay: rgba(16,38,49,0.42);
+    --hero-fallback:#15323f;
+    --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -30,7 +98,7 @@ html { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   font-weight: 400;
   letter-spacing: -0.005em;
@@ -110,38 +178,10 @@ main.content,
   margin-right: auto;
 }
 .section-tint > .publications-layout {
-  max-width: 1280px; /* graph section gets a wider canvas */
+  max-width: var(--maxw);
 }
 .section-light { background: var(--bg); }
 .section-tint  { background: var(--bg-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.section-dark  {
-  background: #0d2624;
-  color: #eef2f1;
-}
-.section-dark h2 { color: #ffffff; }
-.section-dark h2::after { background: var(--accent-2); }
-.section-dark a { color: #ffffff; border-bottom-color: rgba(255,255,255,0.35); }
-.section-dark a:hover { color: #7fd1c4; border-bottom-color: #7fd1c4; }
-
-/* ── Bio block ─ */
-.bio {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 2rem 2.25rem;
-  background: var(--bg);
-  border-left: 3px solid var(--accent-2, #7fd1c4);
-  border-radius: 2px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--ink);
-}
-.bio p { margin: 0 0 1rem; }
-.bio p:last-child { margin-bottom: 0; }
-.bio-name {
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-}
 
 /* ── Contact grid (definition list, label left / value right) ─ */
 .contact-grid {
@@ -214,7 +254,7 @@ header .navbar,
   position: sticky !important;
   top: 0;
   z-index: 1030;
-  background: rgba(255,255,255,0.92) !important;
+  background: var(--navbar-bg) !important;
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--rule);
@@ -251,7 +291,12 @@ header .navbar,
 .hero {
   text-align: center;
   padding: 5rem 0 4rem;
-  background: #f0f7f5;
+  /* Hero image with a theme-aware overlay: a translucent white wash in
+     light mode, a dark teal scrim in dark mode (see --hero-overlay). */
+  background:
+    linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+    url(assets/hero-bg.png) center / cover no-repeat;
+  background-color: var(--hero-fallback);
   border-bottom: 1px solid var(--rule);
   animation: fadeUp 0.7s ease-out;
 }
@@ -265,28 +310,30 @@ header .navbar,
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #ffffff;
-  box-shadow: 0 0 0 1px rgba(0,105,92,0.15),
-              0 14px 36px -12px rgba(0,105,92,0.25);
+  box-shadow: 0 0 0 1px rgba(47,96,120,0.15),
+              0 14px 36px -12px rgba(47,96,120,0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .hero .hero-photo:hover {
   transform: scale(1.03);
   box-shadow: 0 0 0 2px var(--accent),
-              0 14px 36px -10px rgba(0,105,92,0.25);
+              0 14px 36px -10px rgba(47,96,120,0.25);
 }
 
 .hero h1 {
   margin: 0 0 0.6rem;
   font-size: clamp(2rem, 4.5vw, 3rem);
+  text-shadow: var(--hero-text-shadow);
 }
 
 .hero .tagline {
   display: block;
-  font-size: 1.05rem;
-  color: var(--ink-soft);
-  font-weight: 400;
+  font-size: 1.12rem;
+  color: var(--ink);
+  font-weight: 600;
   margin-bottom: 2rem;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.005em;
+  text-shadow: var(--hero-text-shadow);
 }
 
 .hero-contacts {
@@ -316,34 +363,16 @@ header .navbar,
   transform: translateY(-2px);
 }
 
-/* ── Contact block ──────────────────────────────────────────── */
-.contact-block {
-  background: var(--bg-soft);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 1.5rem 1.75rem;
-  font-size: 0.95rem;
-  line-height: 2;
-  color: var(--ink-soft);
-}
-.contact-block strong {
-  display: inline-block;
-  min-width: 60px;
-  color: var(--ink);
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
 /* ── Section heading style ──────────────────────────────────── */
 .section-light > h2,
 .section-tint  > h2,
-.section-dark  > h2,
 .section-light h2.anchored,
-.section-tint  h2.anchored,
-.section-dark  h2.anchored {
+.section-tint  h2.anchored {
   position: relative;
+  /* Shrink the heading box to its text so the underline (centered on the
+     box) lines up with the word instead of the full content column. */
+  width: fit-content;
+  max-width: 100%;
   text-align: center;
   font-size: 0.82rem;
   font-weight: 600;
@@ -355,10 +384,8 @@ header .navbar,
 }
 .section-light > h2::after,
 .section-tint  > h2::after,
-.section-dark  > h2::after,
 .section-light h2.anchored::after,
-.section-tint  h2.anchored::after,
-.section-dark  h2.anchored::after {
+.section-tint  h2.anchored::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -372,9 +399,8 @@ header .navbar,
 
 /* ── About prose (centered column) ──────────────────────────── */
 .section-light p,
-.section-tint  p,
-.section-dark  p {
-  max-width: 70ch;
+.section-tint  p {
+  max-width: var(--maxw);
   margin-left: auto;
   margin-right: auto;
   font-size: 1.05rem;
@@ -383,36 +409,6 @@ header .navbar,
   hyphens: auto;
   -webkit-hyphens: auto;
   text-justify: inter-word;
-}
-
-/* ── Selected publications ──────────────────────────────────── */
-main.content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-main.content ul li {
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--rule-soft);
-  font-size: 0.97rem;
-  line-height: 1.6;
-  color: var(--ink-soft);
-  transition: padding-left 0.2s ease;
-}
-main.content ul li:hover {
-  padding-left: 0.5rem;
-}
-main.content ul li strong {
-  display: block;
-  color: var(--ink);
-  font-weight: 600;
-  margin: 0.15rem 0;
-  font-size: 1.02rem;
-}
-main.content ul li em {
-  font-style: normal;
-  color: var(--accent);
-  font-weight: 500;
 }
 
 /* ── Publications page ──────────────────────────────────────── */
@@ -440,11 +436,11 @@ main.content ul li em {
 
 .chip {
   display: inline-block;
-  padding: 0.32em 0.85em;
-  margin: 0.18em 0.18em 0.18em 0;
+  padding: 0.4em 1em;
+  margin: 0.22em 0.22em 0.22em 0;
   border: 1px solid var(--rule);
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--ink-soft);
   background: var(--bg);
@@ -463,7 +459,7 @@ main.content ul li em {
 }
 
 .filter-toggle {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--ink-muted);
   margin: 1rem 0 0.5rem;
   display: flex;
@@ -475,8 +471,8 @@ main.content ul li em {
   cursor: pointer;
 }
 #clear-filters {
-  font-size: 0.78rem;
-  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.85rem;
   border: 1px solid var(--rule);
   background: var(--bg);
   color: var(--ink-soft);
@@ -490,7 +486,7 @@ main.content ul li em {
 }
 
 #pub-count {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--ink-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -505,7 +501,7 @@ main.content ul li em {
 }
 
 .pub-year-group h3 {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.1em;
@@ -516,8 +512,8 @@ main.content ul li em {
 .pub-entry {
   padding: 0.9rem 0;
   border-bottom: 1px solid var(--rule-soft);
-  font-size: 0.93rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 .pub-entry .pub-title {
@@ -529,36 +525,36 @@ main.content ul li em {
 .pub-entry .pub-venue {
   font-style: normal;
   color: var(--accent);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 .pub-entry a {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1a6fb3;
+  color: var(--accent);
   border: none;
 }
 .pub-entry a:hover {
-  color: #0d4f87;
+  color: var(--accent-2);
   text-decoration: underline;
 }
 
 .pub-abstract {
   margin-top: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--ink-muted);
 }
 .pub-abstract > summary {
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1a6fb3;
+  color: var(--accent);
   list-style: none;
   display: inline-block;
 }
 .pub-abstract > summary::-webkit-details-marker { display: none; }
-.pub-abstract > summary:hover { color: #0d4f87; text-decoration: underline; }
+.pub-abstract > summary:hover { color: var(--accent-2); text-decoration: underline; }
 .pub-abstract p {
   margin: 0.5rem 0;
   line-height: 1.5;
@@ -589,21 +585,6 @@ main.content ul li em {
   transform: translateY(0);
 }
 
-/* ── More-link arrow ────────────────────────────────────────── */
-.more-link, a.more-link {
-  display: inline-block;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent);
-  border: none;
-  transition: transform 0.18s ease;
-}
-.more-link:hover {
-  transform: translateX(4px);
-  color: var(--accent-2);
-}
-
 /* ── CV page legacy hooks ───────────────────────────────────── */
 .cv-section { margin-bottom: 2rem; }
 .cv-section h2 {
@@ -615,4 +596,43 @@ main.content ul li em {
 ::selection {
   background: var(--accent);
   color: var(--bg);
+}
+
+/* ── Theme toggle (injected into the navbar by theme.js) ───────── */
+:root            { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+}
+
+/* Smooth the switch between themes */
+body, .navbar, .section-light, .section-tint, .hero,
+#network-container, .chip, .contact-grid, .pub-entry {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 0.4rem;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
