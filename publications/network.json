@@ -27,7 +27,7 @@
       "year": 2025,
       "type": "article",
       "outlet": "American Journal of Sociology",
-      "keywords": ["labor-markets", "organizations", "networks", "occupations", "mobility"],
+      "keywords": ["labor-markets", "organizations", "occupations", "mobility"],
       "doi": "10.1086/736439",
       "abstract": "This article proposes that workplaces are key sites for career exploration and development. By bringing together workers of distinct occupations, workplaces facilitate the exchange of information and skill, generating mobility resources for individuals to transition into other occupations. We examine the connection between workplace copresence and occupational mobility patterns with two studies. First, using a novel measure of occupation-establishment copresence, we find that the frequency of two occupations sharing the same workplace is robustly linked to the prevalence of between-occupation transitions in the United States. Second, using establishment-employee matched data in France, we show that individual mobility varies by workplace staffing pattern: Those with more coworkers in certain occupations are more likely to transition into these occupations, even after they exit the firm. Together, these results indicate that workplaces play a critical role in shaping occupational mobility.",
       "citations": 1
@@ -71,7 +71,7 @@
       "year": 2022,
       "type": "article",
       "outlet": "Sociological Perspectives",
-      "keywords": ["guns", "politics"],
+      "keywords": ["guns", "politics", "methods"],
       "doi": "10.1177/07311214211021123",
       "abstract": "Existing scholarship usually presents people’s attitudes about guns as fixed and fully formed. Rarely are such attitudes examined as the outcome of social processes. As a result, while we know a great deal about what people think about guns, we know very little about the development of these beliefs. In this paper, we use a combination of surveys and life history interviews with a national sample of college students between the ages of 18 and 24 to examine how attitudes about guns develop in childhood and young adulthood. We find that while family gun ownership matters, positive attitudes about guns develop through active socialization that continues beyond childhood and is not reducible to family background. Relationships play a key role in this process, with changes in relationships often driving changes in attitudes about guns. Changes in attitudes about guns can take place in terms of both the content (what young adults think about guns) and the form (how young adults think about guns). In the transition to young adulthood, attitudes about guns develop from being articulated primarily as personal experiences connected to the activity of shooting guns or experiencing gun violence, to being articulated as political beliefs, connected to issues of regulation. These findings contribute to our understanding of gun attitudes by offering insights on not only what people think about guns but also how people come to think about guns in the ways that they do.",
       "citations": 13
@@ -89,7 +89,7 @@
     },
     {
       "id": "lin2021firm",
-      "title": "Firm Size and Employment during the Pandemic",
+      "title": "Firm Size and Employment Security during the Pandemic",
       "year": 2021,
       "type": "article",
       "outlet": "Socius",
@@ -104,7 +104,7 @@
       "year": 2020,
       "type": "book",
       "outlet": "Oxford University Press",
-      "keywords": ["financialization", "inequality", "organizations"],
+      "keywords": ["financialization", "inequality", "organizations", "labor-markets"],
       "doi": "10.1093/oso/9780190638313.001.0001",
       "abstract": "Finance is an inescapable part of American life. From how one pursues an education, buys a home, runs a business, or saves for retirement, finance orders the lives of ordinary Americans. And as finance continues to expand, inequality soars.\n\nIn Divested, Ken-Hou Lin and Megan Tobias Neely demonstrate why widening inequality cannot be understood without examining the rise of big finance. The growth of the financial sector has dramatically transformed the American economy by redistributing resources from workers and families into the hands of owners, executives, and financial professionals. The average American is now divested from a world driven by the maximization of financial profit.\n\nLin and Neely provide systematic evidence to document how the ascendance of finance on Wall Street, Main Street, and among households is a fundamental cause of economic inequality. They argue that finance has reshaped the economy in three important ways. First, the financial sector extracts resources from the economy at large without providing economic benefits to those outside the financial services industry. Second, firms in other economic sectors have become increasingly involved in lending and investing, which weakens the demand for labor and the bargaining power of workers. And third, the escalating consumption of financial products by households shifts risks and uncertainties once shouldered by unions, corporations, and governments onto families.\n\nA clear, comprehensive, and convincing account of the forces driving economic inequality in America, Divested warns us that the most damaging consequence of the expanding financial system is not simply recurrent financial crises but a widening social divide between the have and have-nots.\n\nFinalist, 2020 Robert W. Hamilton Book Awards. Translated into Traditional Chinese (2021) and Simplified Chinese (2024).",
       "citations": 84
@@ -116,9 +116,9 @@
       "type": "article",
       "outlet": "Social Forces",
       "keywords": ["gender", "labor-markets", "inequality"],
-      "doi": "10.1093/sf/soz142",
+      "doi": "10.1093/sf/soz110",
       "abstract": "Previous research has established the presence of a motherhood wage penalty in many developed societies; however, whether mothers face similar disadvantages in developing countries remains underexplored. This article argues that different intervening factors emerge when considering mothers’ labor compensation in developing contexts. Labor informality, a key characteristic of labor markets in developing countries, could play a significant role in shaping the wage consequence of motherhood. Using microdata from 43 national household surveys conducted between 2000 and 2017, we analyze five Latin American countries: Argentina, Brazil, Chile, Mexico, and Peru. After accounting for selection into employment and human capital, we find that mothers receive lower wages than childless women in all five countries. The penalties are similar to those found in some developed countries, ranging from 12 percent in Brazil to 21 percent in Chile. Mothers’ higher likelihood to work in the informal sector accounts for part of the wage gap.",
-      "citations": 58
+      "citations": 40
     },
     {
       "id": "curington2020tipping",
@@ -159,14 +159,13 @@
       "year": 2018,
       "type": "article",
       "outlet": "Social Currents",
-      "keywords": ["guns", "methods"],
-      "doi": "10.1177/2329496517725334",
-      "abstract": "Recent waves of legislation have made it much easier for gun owners to obtain a Concealed Handgun License (CHL) and thereby carry their guns in public except when explicitly prohibited. Because data are difficult to access, our understanding of who seeks and obtains such licenses remains limited. Using data obtained through Freedom of Information Act requests, this article fills this empirical gap by describing demographic trends and characteristics of applicants for CHLs in five states: Florida, Indiana, Massachusetts, Texas, and Utah. The results establish that (1) applications for CHLs are growing at fast rates; (2) there are significant gender and racial disparities in terms of who applies for CHLs, with men 2.9 to 5.5 times more likely to apply than women, and whites 1.3 to 2.0 times more likely to apply than blacks; (3) in Florida and Utah, these demographic gaps have widened over time; and (4) there are significant racial disparities in terms of application outcomes, with black applicants being 3.3 to 5.5 times more likely to be denied a license than white applicants. Moreover, we do not find the patterns in Massachusetts, a may-issue state, to be significantly different from the shall-issue states in our sample.",
-      "citations": 22
+      "keywords": ["guns", "methods", "gender", "race"],
+      "doi": "10.1177/2329496517732041",
+      "abstract": "Recent waves of legislation have made it much easier for gun owners to obtain a Concealed Handgun License (CHL) and thereby carry their guns in public except when explicitly prohibited. Because data are difficult to access, our understanding of who seeks and obtains such licenses remains limited. Using data obtained through Freedom of Information Act requests, this article fills this empirical gap by describing demographic trends and characteristics of applicants for CHLs in five states: Florida, Indiana, Massachusetts, Texas, and Utah. The results establish that (1) applications for CHLs are growing at fast rates; (2) there are significant gender and racial disparities in terms of who applies for CHLs, with men 2.9 to 5.5 times more likely to apply than women, and whites 1.3 to 2.0 times more likely to apply than blacks; (3) in Florida and Utah, these demographic gaps have widened over time; and (4) there are significant racial disparities in terms of application outcomes, with black applicants being 3.3 to 5.5 times more likely to be denied a license than white applicants. Moreover, we do not find the patterns in Massachusetts, a may-issue state, to be significantly different from the shall-issue states in our sample."
     },
     {
       "id": "cobb2017growing",
-      "title": "Growing Apart: The Changing Firm-Size Wage Premium and Its Inequality Consequences",
+      "title": "Growing Apart: The Declining Firm-Size Wage Effect and Its Wage Inequality Consequence",
       "year": 2017,
       "type": "article",
       "outlet": "Organization Science",
@@ -214,7 +213,7 @@
       "year": 2015,
       "type": "article",
       "outlet": "Socio-Economic Review",
-      "keywords": ["financialization", "inequality"],
+      "keywords": "financialization",
       "doi": "10.1093/ser/mwv009",
       "abstract": "We explore the consequences of increased financial investment by non-financial firms, finding consistent evidence that financialization in the non-finance sector reduced economic growth in that sector. Employing an expanded conceptualization of value added which identifies internal (capital, labour) and external (creditors, government, charities) stakeholders with claims on the value generated in production and exchange, we find that the declining value added produced by financialization was born most strikingly by labour and the state, while increasing value was channelled to corporate debt and equity holders. Corporate charities also had a net gain associated with increased financial investments by the non-financial firms.",
       "citations": 125
@@ -248,9 +247,9 @@
       "type": "article",
       "outlet": "Social Science Research",
       "keywords": ["immigration", "race", "inequality"],
-      "doi": "10.1016/j.ssresearch.2013.12.013",
+      "doi": "10.1016/j.ssresearch.2014.01.005",
       "abstract": "Longitudinal event history data from two waves of the Los Angeles Family and Neighborhood Survey are used to explore racial, ethnic, and documentation status differences in access to desirable neighborhoods. We first find that contrary to recent findings, undocumented Latinos do not replace blacks at the bottom of the locational attainment hierarchy. Whites continue to end up in neighborhoods that are less poor and whiter than minority groups, while all minorities, including undocumented Latinos, end up in neighborhoods that are of similar quality. Second, the effects of socioeconomic status for undocumented Latinos are either similar to or weaker than disadvantaged blacks. These findings suggest that living in less desirable neighborhoods is a fate disproportionately borne by non-white Los Angeles residents and that in some limited ways, the penalty attached to being undocumented Latino might actually be greater than the penalty attached to being black.",
-      "citations": 13
+      "citations": 51
     },
     {
       "id": "lin2013financialization",
@@ -291,9 +290,9 @@
       "type": "article",
       "outlet": "Social Science Research",
       "keywords": ["methods", "labor-markets"],
-      "doi": "10.1016/j.ssresearch.2011.11.013",
+      "doi": "10.1016/j.ssresearch.2011.10.003",
       "abstract": "Previous studies find that workers of longer work weeks report more market hours in stylized measure than in time diary, while those of shorter work weeks report fewer hours. Using data from the American Time Use Survey (ATUS) 2003–2007, this paper attempts to explain this dilemma. I argue that market work time is composed of activity time, committed time, and constrained time. Thus, part of the difference found between the two estimates is due to the calculation of the diary estimate. I also argue that the wording of the stylized question is consequential. Some stylized questions (e.g., How many hours per week do you usually work?) might capture the mode, instead of the mean, of work time. Thus, when the distribution of work time is skewed, the mismatch between the two estimates is expected. A sequence-based identification for diary estimate and a non-parametric adjustment for stylized estimate are proposed and empirically examined. The result indicates that both methods significantly reduce the observed gap between the two estimates. I discuss the implications for future time use survey design in the concluding section.",
-      "citations": 10
+      "citations": 12
     },
     {
       "id": "tomaskovicdevey2011income",
@@ -313,9 +312,9 @@
       "type": "article",
       "outlet": "Social Science Research",
       "keywords": ["immigration", "labor-markets", "methods"],
-      "doi": "10.1016/j.ssresearch.2011.04.006",
+      "doi": "10.1016/j.ssresearch.2011.05.003",
       "abstract": "Using data from the US Current Population Surveys 2006–2008, I examine the weekly work hours of Mexican immigrants. Mexican immigrant workers on average work 2–4 h less than non-Hispanic whites per week, which contradicts the popular portrait of long immigrant work hours. Four mechanisms to explain this gap are proposed and examined. Results show that the work time disparity between non-Hispanic white and Mexican immigrant workers is explained by differences in human capital, ethnic concentration in the labor market, and selection process into employment. English proficiency has limited effect on work time after location in labor market is specified, while the effect of citizenship status remains robust.",
-      "citations": 10
+      "citations": 12
     }
   ],
   "edges": [
@@ -387,7 +386,7 @@
     {
       "source": "cobb2017growing",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "cobb2017growing",
@@ -427,11 +426,6 @@
     {
       "source": "cobb2017growing",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "cobb2017growing",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -516,17 +510,17 @@
     },
     {
       "source": "cort2014residential",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "cort2014residential",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "cort2014residential",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "cort2014residential",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -601,17 +595,17 @@
     },
     {
       "source": "curington2015positioning",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "curington2015positioning",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2015positioning",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2015positioning",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -681,17 +675,17 @@
     },
     {
       "source": "curington2020tipping",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "curington2020tipping",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2020tipping",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2020tipping",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -756,17 +750,17 @@
     },
     {
       "source": "curington2021dating",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "curington2021dating",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "curington2021dating",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "curington2021dating",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -806,6 +800,11 @@
     },
     {
       "source": "lin2011less",
+      "target": "lin2020divested",
+      "weight": 1
+    },
+    {
+      "source": "lin2011less",
       "target": "lin2021firm",
       "weight": 1
     },
@@ -827,6 +826,11 @@
     {
       "source": "lin2011less",
       "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2011less",
+      "target": "shapira2022attitudes",
       "weight": 1
     },
     {
@@ -866,6 +870,11 @@
     },
     {
       "source": "lin2012revisiting",
+      "target": "lin2020divested",
+      "weight": 1
+    },
+    {
+      "source": "lin2012revisiting",
       "target": "lin2021firm",
       "weight": 1
     },
@@ -882,6 +891,11 @@
     {
       "source": "lin2012revisiting",
       "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2012revisiting",
+      "target": "shapira2022attitudes",
       "weight": 1
     },
     {
@@ -957,7 +971,7 @@
     {
       "source": "lin2013financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2013financialization",
@@ -1011,17 +1025,17 @@
     },
     {
       "source": "lin2013mate",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "lin2013mate",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
     {
       "source": "lin2013mate",
       "target": "tomaskovicdevey2013financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2013mate",
-      "target": "tomaskovicdevey2015financialization",
       "weight": 1
     },
     {
@@ -1052,7 +1066,7 @@
     {
       "source": "lin2015financial",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2015financial",
@@ -1097,7 +1111,7 @@
     {
       "source": "lin2015financial",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2015financial",
@@ -1122,7 +1136,7 @@
     {
       "source": "lin2016rise",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2016rise",
@@ -1182,7 +1196,7 @@
     {
       "source": "lin2017gender",
       "target": "lin2020divested",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "lin2017gender",
@@ -1221,6 +1235,11 @@
     },
     {
       "source": "lin2017gender",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2017gender",
       "target": "tomaskovicdevey2011income",
       "weight": 2
     },
@@ -1232,7 +1251,7 @@
     {
       "source": "lin2017gender",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2017gender",
@@ -1247,7 +1266,7 @@
     {
       "source": "lin2018union",
       "target": "lin2020divested",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2018union",
@@ -1277,7 +1296,7 @@
     {
       "source": "lin2019immigration",
       "target": "lin2020divested",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2019immigration",
@@ -1326,23 +1345,18 @@
     },
     {
       "source": "lin2019immigration",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2019immigration",
       "target": "villanueva2020motherhood",
       "weight": 2
     },
     {
       "source": "lin2020divested",
       "target": "lin2021firm",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
       "target": "lin2022network",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
@@ -1352,7 +1366,7 @@
     {
       "source": "lin2020divested",
       "target": "lin2025contagion",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2020divested",
@@ -1377,12 +1391,12 @@
     {
       "source": "lin2020divested",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2020divested",
       "target": "villanueva2020motherhood",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "lin2021firm",
@@ -1441,11 +1455,6 @@
     },
     {
       "source": "lin2022network",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
-    },
-    {
-      "source": "lin2022network",
       "target": "villanueva2020motherhood",
       "weight": 2
     },
@@ -1466,6 +1475,11 @@
     },
     {
       "source": "lin2023rising",
+      "target": "shapira2018concealed",
+      "weight": 1
+    },
+    {
+      "source": "lin2023rising",
       "target": "tomaskovicdevey2011income",
       "weight": 2
     },
@@ -1477,7 +1491,7 @@
     {
       "source": "lin2023rising",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2023rising",
@@ -1512,7 +1526,7 @@
     {
       "source": "lin2026financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "lin2026financialization",
@@ -1526,6 +1540,11 @@
     },
     {
       "source": "lundquist2015love",
+      "target": "shapira2018concealed",
+      "weight": 2
+    },
+    {
+      "source": "lundquist2015love",
       "target": "tomaskovicdevey2011income",
       "weight": 1
     },
@@ -1536,12 +1555,12 @@
     },
     {
       "source": "lundquist2015love",
-      "target": "tomaskovicdevey2015financialization",
-      "weight": 1
+      "target": "villanueva2020motherhood",
+      "weight": 2
     },
     {
-      "source": "lundquist2015love",
-      "target": "villanueva2020motherhood",
+      "source": "lundquist2024interracial",
+      "target": "shapira2018concealed",
       "weight": 2
     },
     {
@@ -1552,7 +1571,7 @@
     {
       "source": "shapira2018concealed",
       "target": "shapira2022attitudes",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "shapira2018concealed",
@@ -1560,9 +1579,14 @@
       "weight": 2
     },
     {
+      "source": "shapira2018concealed",
+      "target": "villanueva2020motherhood",
+      "weight": 1
+    },
+    {
       "source": "shapira2022attitudes",
       "target": "shapira2026ambivalence",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "tomaskovicdevey2011income",
@@ -1572,7 +1596,7 @@
     {
       "source": "tomaskovicdevey2011income",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
+      "weight": 1
     },
     {
       "source": "tomaskovicdevey2011income",
@@ -1582,15 +1606,10 @@
     {
       "source": "tomaskovicdevey2013financialization",
       "target": "tomaskovicdevey2015financialization",
-      "weight": 2
-    },
-    {
-      "source": "tomaskovicdevey2013financialization",
-      "target": "villanueva2020motherhood",
       "weight": 1
     },
     {
-      "source": "tomaskovicdevey2015financialization",
+      "source": "tomaskovicdevey2013financialization",
       "target": "villanueva2020motherhood",
       "weight": 1
     }
