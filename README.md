@@ -6,8 +6,9 @@ Built with [Quarto](https://quarto.org). Hosted on Netlify at `kenhoulin.info`.
 ## Quick start
 
 ```bash
-# Prerequisites: Quarto, R, and the following R packages:
-# install.packages(c("bib2df", "dplyr", "tidyr", "jsonlite", "stringr", "readr", "bibtex"))
+# Prerequisites: Quarto + R. Required R packages are auto-installed by the
+# build step (scripts/bib_to_network.R); to pre-install them manually:
+# install.packages(c("bib2df", "dplyr", "tidyr", "jsonlite", "stringr", "httr", "readr", "bibtex"))
 
 quarto render        # builds _site/
 quarto preview       # live preview at localhost:4242
