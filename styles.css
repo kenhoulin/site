@@ -29,7 +29,8 @@
   --node-link:    #cccccc;
   /* Navbar + hero, theme-specific */
   --navbar-bg:    rgba(255,255,255,0.92);
-  --hero-overlay: rgba(255,255,255,0.82);  /* white wash in light mode */
+  --hero-image:   url(assets/day.svg);     /* light-mode hero scene */
+  --hero-overlay: rgba(255,255,255,0.45);  /* light wash; scene shows through */
   --hero-fallback:#eeece8;
   --hero-text-shadow: 0 1px 2px rgba(255,255,255,0.55);
   --radius:     2px;
@@ -59,7 +60,8 @@
   --node-stroke:  #1b3c4b;
   --node-link:    #5a7884;
   --navbar-bg:    rgba(16,38,49,0.92);
-  --hero-overlay: rgba(16,38,49,0.42); /* dark scrim instead of white wash */
+  --hero-image:   url(assets/night.svg); /* dark-mode hero scene */
+  --hero-overlay: rgba(16,38,49,0.35); /* light scrim; scene shows through */
   --hero-fallback:#15323f;
   --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
@@ -82,7 +84,8 @@
     --node-stroke:  #1b3c4b;
     --node-link:    #5a7884;
     --navbar-bg:    rgba(16,38,49,0.92);
-    --hero-overlay: rgba(16,38,49,0.42);
+    --hero-image:   url(assets/night.svg);
+    --hero-overlay: rgba(16,38,49,0.35);
     --hero-fallback:#15323f;
     --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
   }
@@ -295,7 +298,7 @@ header .navbar,
      light mode, a dark teal scrim in dark mode (see --hero-overlay). */
   background:
     linear-gradient(var(--hero-overlay), var(--hero-overlay)),
-    url(assets/hero-bg.png) center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
   background-color: var(--hero-fallback);
   border-bottom: 1px solid var(--rule);
   animation: fadeUp 0.7s ease-out;
