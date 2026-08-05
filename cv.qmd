@@ -264,6 +264,18 @@ rows <- sapply(service$editorial, function(x)
 cat_md(two_col(rows))
 ```
 
+## Peer Review
+
+```{r, echo=FALSE, results='asis'}
+# Flat name lists — run-in paragraphs rather than two_col, which expects
+# a "years & entry" pair per row.
+rev_list <- function(x) paste(sapply(x, ltx), collapse = ", ")
+
+cat_md("*Journals*\n\n", rev_list(service$reviewer$journals), "\n")
+cat_md("\n*Grant Agencies*\n\n", rev_list(service$reviewer$grant_agencies), "\n")
+cat_md("\n*Tenure and Promotion*\n\n", rev_list(service$reviewer$tenure_promotion), "\n")
+```
+
 ## Professional Associations
 
 ```{r, echo=FALSE, results='asis'}
