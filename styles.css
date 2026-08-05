@@ -32,7 +32,11 @@
   --hero-image:   url(assets/day.svg);     /* light-mode hero scene */
   --hero-overlay: rgba(255,255,255,0.45);  /* light wash; scene shows through */
   --hero-fallback:#eeece8;
-  --hero-text-shadow: 0 1px 2px rgba(255,255,255,0.55);
+  /* Scrim pooled behind the hero text only, so the artwork keeps full
+     strength at the edges of the band (see .hero::before). */
+  --hero-scrim-core: rgba(255,255,255,0.70);
+  --hero-scrim-mid:  rgba(255,255,255,0.42);
+  --hero-text-shadow: 0 0 2px rgba(255,255,255,0.9), 0 0 12px rgba(255,255,255,0.7);
   --radius:     2px;
   --maxw:       880px;
   --gutter:     max(2rem, 5vw);
@@ -63,7 +67,11 @@
   --hero-image:   url(assets/night.svg); /* dark-mode hero scene */
   --hero-overlay: rgba(16,38,49,0.35); /* light scrim; scene shows through */
   --hero-fallback:#15323f;
-  --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  /* Stronger than light: night.svg puts the tiger's bright gold flank
+     directly behind the name, so cream-on-gold needs more separation. */
+  --hero-scrim-core: rgba(11,28,37,0.86);
+  --hero-scrim-mid:  rgba(11,28,37,0.55);
+  --hero-text-shadow: 0 0 2px rgba(6,18,24,0.9), 0 0 14px rgba(6,18,24,0.75);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -87,7 +95,9 @@
     --hero-image:   url(assets/night.svg);
     --hero-overlay: rgba(16,38,49,0.35);
     --hero-fallback:#15323f;
-    --hero-text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    --hero-scrim-core: rgba(11,28,37,0.86);
+    --hero-scrim-mid:  rgba(11,28,37,0.55);
+    --hero-text-shadow: 0 0 2px rgba(6,18,24,0.9), 0 0 14px rgba(6,18,24,0.75);
   }
 }
 
@@ -243,6 +253,8 @@ main.content,
   max-width: var(--maxw);
   margin-left: auto;
   margin-right: auto;
+  position: relative;   /* stack above the text scrim (.hero::before) */
+  z-index: 1;
 }
 
 @media (max-width: 640px) {
@@ -302,6 +314,36 @@ header .navbar,
   background-color: var(--hero-fallback);
   border-bottom: 1px solid var(--rule);
   animation: fadeUp 0.7s ease-out;
+  position: relative;
+  isolation: isolate;
+}
+
+/* A soft scrim pooled behind the name and tagline. The flat --hero-overlay
+   alone can't tame the minhwa artwork: its stripe detail sits at the same
+   stroke weight as the letterforms, so contrast behind the text swings
+   wildly. This keeps a calm field under the type while leaving the tiger
+   at full strength everywhere else. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 52% at 50% 62%,
+    var(--hero-scrim-core) 0%,
+    var(--hero-scrim-mid) 55%,
+    transparent 78%);
+}
+
+/* Narrow viewports: `cover` crops in much harder and the tagline wraps to
+   two lines, so the text block is taller and narrower than on desktop.
+   Widen and flatten the ellipse to match it. */
+@media (max-width: 640px) {
+  .hero::before {
+    background: radial-gradient(ellipse 92% 42% at 50% 56%,
+      var(--hero-scrim-core) 0%,
+      var(--hero-scrim-mid) 62%,
+      transparent 88%);
+  }
 }
 
 .hero img.hero-photo,
