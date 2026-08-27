@@ -2,6 +2,7 @@
 title: ""
 format:
   pdf:
+    output-file: KHL_CV.pdf
     template: assets/cv-template.tex
     keep-tex: true
     pdf-engine: pdflatex
