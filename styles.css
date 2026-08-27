@@ -250,6 +250,14 @@ main.content,
   color: var(--ink-soft);
   margin-top: 0.2rem !important;
 }
+/* Coauthors read as ordinary prose — deliberately not the accent treatment,
+   so the highlight stays on the publisher line. */
+.book-authors {
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin-top: 0.5rem !important;
+}
 .book-byline {
   font-size: 0.82rem;
   font-weight: 600;
@@ -257,7 +265,7 @@ main.content,
   text-transform: uppercase;
   line-height: 1.6;
   color: var(--accent);
-  margin-top: 0.85rem !important;
+  margin-top: 0.5rem !important;
 }
 .book-blurb {
   font-size: 1rem;
