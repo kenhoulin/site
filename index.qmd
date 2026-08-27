@@ -68,29 +68,6 @@ My current projects ask how large language models can be implemented for social 
 <div class="books-grid">
 
   <article class="book">
-    <a class="book-cover" href="https://www.ucpress.edu/books/the-dating-divide/paper" target="_blank" rel="noopener">
-      <img src="assets/books/dating-divide.jpg" width="360" height="540"
-           alt="Cover of The Dating Divide: Race and Desire in the Era of Online Romance">
-    </a>
-    <div class="book-meta">
-      <h3 class="book-title">The Dating Divide</h3>
-      <p class="book-subtitle">Race and Desire in the Era of Online Romance</p>
-      <p class="book-byline">with Celeste Vaughan Curington and Jennifer Hickes Lundquist<br>
-        University of California Press, 2021</p>
-      <p class="book-blurb">The first comprehensive account of <em>digital-sexual racism</em> &mdash;
-        a form of racism mediated and amplified by the anonymity of online dating. Drawing on
-        behavioral data from more than a million users of a mainstream dating site, archival
-        research, and seventy-five in-depth interviews, the book shows how a space often
-        celebrated as an equalizer licenses exclusions that rarely surface face to face.</p>
-      <p class="book-note">Honorable Mention, Goode Book Award, ASA Family Section.</p>
-      <p class="book-links">
-        <a href="https://www.ucpress.edu/books/the-dating-divide/paper" target="_blank" rel="noopener">Publisher</a>
-        <a href="https://doi.org/10.1525/9780520966703" target="_blank" rel="noopener">DOI</a>
-      </p>
-    </div>
-  </article>
-
-  <article class="book">
     <a class="book-cover" href="https://global.oup.com/academic/product/divested-9780190638313" target="_blank" rel="noopener">
       <img src="assets/books/divested.jpg" width="328" height="500"
            alt="Cover of Divested: Inequality in the Age of Finance">
@@ -98,8 +75,8 @@ My current projects ask how large language models can be implemented for social 
     <div class="book-meta">
       <h3 class="book-title">Divested</h3>
       <p class="book-subtitle">Inequality in the Age of Finance</p>
-      <p class="book-byline">with Megan Tobias Neely<br>
-        Oxford University Press, 2020</p>
+      <p class="book-authors">(with Megan Tobias Neely)</p>
+      <p class="book-byline">Oxford University Press, 2020</p>
       <p class="book-blurb">Finance orders how Americans pursue an education, buy a home, run a
         business, and save for retirement &mdash; and as it has expanded, inequality has soared.
         The book documents how the ascendance of finance on Wall Street, on Main Street, and
@@ -110,6 +87,29 @@ My current projects ask how large language models can be implemented for social 
       <p class="book-links">
         <a href="https://global.oup.com/academic/product/divested-9780190638313" target="_blank" rel="noopener">Publisher</a>
         <a href="https://doi.org/10.1093/oso/9780190638313.001.0001" target="_blank" rel="noopener">DOI</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="book">
+    <a class="book-cover" href="https://www.ucpress.edu/books/the-dating-divide/paper" target="_blank" rel="noopener">
+      <img src="assets/books/dating-divide.jpg" width="360" height="540"
+           alt="Cover of The Dating Divide: Race and Desire in the Era of Online Romance">
+    </a>
+    <div class="book-meta">
+      <h3 class="book-title">The Dating Divide</h3>
+      <p class="book-subtitle">Race and Desire in the Era of Online Romance</p>
+      <p class="book-authors">(with Celeste Vaughan Curington and Jennifer Hickes Lundquist)</p>
+      <p class="book-byline">University of California Press, 2021</p>
+      <p class="book-blurb">The first comprehensive account of <em>digital-sexual racism</em> &mdash;
+        a form of racism mediated and amplified by the anonymity of online dating. Drawing on
+        behavioral data from more than a million users of a mainstream dating site, archival
+        research, and seventy-five in-depth interviews, the book shows how a space often
+        celebrated as an equalizer licenses exclusions that rarely surface face to face.</p>
+      <p class="book-note">Honorable Mention, Goode Book Award, ASA Family Section.</p>
+      <p class="book-links">
+        <a href="https://www.ucpress.edu/books/the-dating-divide/paper" target="_blank" rel="noopener">Publisher</a>
+        <a href="https://doi.org/10.1525/9780520966703" target="_blank" rel="noopener">DOI</a>
       </p>
     </div>
   </article>
