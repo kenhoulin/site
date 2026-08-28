@@ -236,6 +236,11 @@ main.content,
 
 .book-meta > * { margin: 0; }
 
+/* These paragraphs live inside a raw HTML block, so they are also matched by
+   `.section-light p, .section-tint p` further down this sheet (0,1,1) — which
+   would otherwise win on specificity and reset every size to the prose scale.
+   Scoping under .book-meta (0,2,0) outranks it; it also removes the need for
+   !important on the margins, which now outrank `.book-meta > *` on their own. */
 .book-title {
   font-size: 1.45rem;
   font-weight: 650;
@@ -243,46 +248,50 @@ main.content,
   letter-spacing: -0.01em;
   color: var(--ink);
 }
-.book-subtitle {
+.book-meta .book-subtitle {
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.35;
+  text-align: left;
   color: var(--ink-soft);
-  margin-top: 0.2rem !important;
+  margin-top: 0.2rem;
 }
 /* Coauthors read as ordinary prose — deliberately not the accent treatment,
    so the highlight stays on the publisher line. */
-.book-authors {
+.book-meta .book-authors {
   font-size: 0.98rem;
   line-height: 1.45;
+  text-align: left;
   color: var(--ink-soft);
-  margin-top: 0.5rem !important;
+  margin-top: 0.5rem;
 }
-.book-byline {
+.book-meta .book-byline {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1.6;
+  text-align: left;
   color: var(--accent);
-  margin-top: 0.5rem !important;
+  margin-top: 0.5rem;
 }
-.book-blurb {
+.book-meta .book-blurb {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--ink-soft);
-  margin-top: 0.9rem !important;
+  margin-top: 0.9rem;
 }
-.book-note {
+.book-meta .book-note {
   font-size: 0.9rem;
   line-height: 1.55;
+  text-align: left;
   color: var(--ink-muted);
-  margin-top: 0.75rem !important;
+  margin-top: 0.75rem;
   padding-left: 0.9rem;
   border-left: 2px solid var(--rule);
 }
-.book-links {
-  margin-top: 1rem !important;
+.book-meta .book-links {
+  margin-top: 1rem;
   display: flex;
   gap: 1.25rem;
   flex-wrap: wrap;
@@ -310,21 +319,26 @@ main.content,
 }
 
 /* ── Selected honors (year left / honor right) ──────────────── */
+/* Both this and .honors are direct section children, so each must keep the
+   auto side-margins that centre the column — see the note on .honors below. */
 .honors-label {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 3rem 0 0;
+  max-width: var(--maxw);
+  margin: 3rem auto 0;
   padding-top: 2rem;
   border-top: 1px solid var(--rule);
 }
+/* `margin: … 0 0` here would cancel the auto side-margins that centre every
+   other section child, pushing the list to the gutter. Keep them auto. */
 .honors {
   display: grid;
   grid-template-columns: 92px 1fr;
   gap: 0.9rem 1.75rem;
-  margin: 1.5rem 0 0;
+  margin: 1.5rem auto 0;
 }
 .honors dt {
   font-size: 0.82rem;

@@ -53,11 +53,10 @@ format:
 ::: {.section .section-light}
 ## About {#about}
 
-Welcome to my personal website!
 
-I study how socio-economic transformations produce inequality across a range of settings — financial markets, workplaces, labor markets, and digital platforms — drawing on statistical and computational methods. Across these projects, I work to bring sociological theory and large-scale data into close conversation
+I study how socio-economic transformations produce inequality across a range of settings — financial markets, workplaces, labor markets, and digital platforms — drawing on statistical and computational methods. Across these projects, I work to advance a relational understanding of inequality that departs from the traditional focus on individual attributes and bring sociological theories and large-scale data into close conversation
 
-My current projects ask how large language models can be implemented for social science research, and what prediction markets reveal about the relationship between price and value.
+My current projects ask what can large language models measure that we have not been able to measure before and how do people reason about a future they cannot know.
 
 :::
 
@@ -171,7 +170,7 @@ Iverson Award for Innovation in Teaching.
 
 
 ```{=html}
-<p class="honors-label">Selected Honors</p>
+<div class="honors-label">Selected Honors</div>
 <dl class="honors">
   <dt>2024</dt>
   <dd>President's Associates Teaching Excellence Award<span>University of Texas at Austin</span></dd>
@@ -180,10 +179,10 @@ Iverson Award for Innovation in Teaching.
   <dd>William Julius Wilson Early Career Award<span>ASA Inequality, Poverty, and Mobility Section</span></dd>
 
   <dt>2022</dt>
-  <dd>Honorable Mention, Goode Book Award<span>ASA Family Section</span></dd>
+  <dd>Iverson Award for Innovation in Teaching<span>University of Texas at Austin</span></dd>
 
   <dt>2022</dt>
-  <dd>Iverson Award for Innovation in Teaching<span>University of Texas at Austin</span></dd>
+  <dd>Honorable Mention, Goode Book Award<span>ASA Family Section</span></dd>
 
   <dt>2020</dt>
   <dd>Finalist, Robert W. Hamilton Book Awards<span>University of Texas at Austin</span></dd>
@@ -191,7 +190,7 @@ Iverson Award for Innovation in Teaching.
   <dt>2018</dt>
   <dd>Visiting Researcher<span>Max Planck Sciences Po Center on Coping with Instability in Market Societies</span></dd>
 
-  <dt>2016–17</dt>
+  <dt>2016–2017</dt>
   <dd>Barbara Pierce Bush Regents Professorship in Liberal Arts<span>University of Texas at Austin</span></dd>
 
   <dt>2014</dt>
