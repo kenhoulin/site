@@ -5,7 +5,7 @@ format:
     output-file: KHL_CV.pdf
     template: assets/cv-template.tex
     keep-tex: true
-    pdf-engine: pdflatex
+    pdf-engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +21,10 @@ awards   <- yaml::read_yaml("data/awards.yml")
 talks    <- yaml::read_yaml("data/talks.yml")
 teaching <- yaml::read_yaml("data/teaching.yml")[[1]]
 service  <- yaml::read_yaml("data/service.yml")
+# Translated editions, keyed by BibTeX citation key — kept out of the .bib so
+# the CJK titles never pass through bib2df (and never reach the website JSON,
+# which selects a fixed column set that would drop them anyway).
+translations <- yaml::read_yaml("data/translations.yml")
 
 # ── Load publications from BibTeX ────────────────────────────────────────────
 bib_raw <- bib2df::bib2df("publications/publications.bib")
@@ -34,6 +38,7 @@ bib_type_map <- c(article = "article", book = "book",
                   unpublished = "working", techreport = "working",
                   misc = "other")
 pubs <- data.frame(
+  key     = bib_raw$bibtexkey,
   type    = unname(ifelse(is.na(bib_type_map[tolower(bib_raw$category)]),
                           "other", bib_type_map[tolower(bib_raw$category)])),
   year    = as.integer(bib_raw$year),
@@ -143,6 +148,33 @@ vip_string <- function(p) {
   ""
 }
 
+# Wrap a string in the CJK font family named by `script` (tc/sc → \cjktc/\cjksc,
+# declared in assets/cv-template.tex). Charter has no CJK glyphs, so text left
+# in the body font would silently drop out of the PDF.
+cjk <- function(s, script) {
+  s <- ltx(s)
+  if (is.null(script) || !nzchar(script)) return(s)
+  sprintf("{\\cjk%s %s}", script, s)
+}
+
+# Translated editions hang off the book entry as sub-items.
+fmt_translations <- function(key) {
+  eds <- translations[[key]]
+  if (is.null(eds) || !length(eds)) return("")
+  items <- vapply(eds, function(e) sprintf(
+    "\\item %s edition (%s): %s. %s: %s.",
+    ltx(e$language), ltx(as.character(e$year)),
+    cjk(e$title, e$script), ltx(e$city), cjk(e$publisher, e$script)),
+    character(1))
+  paste0(
+    "\n```{=latex}\n",
+    "\\vspace{-0.6\\baselineskip}\n",
+    "\\begin{itemize}[left=1.5em, nosep]\n",
+    paste(items, collapse = "\n"),
+    "\n\\end{itemize}\n```\n\n"
+  )
+}
+
 fmt_pub <- function(p) {
   doi_link <- if (!is.na(p$doi) && nchar(p$doi))
     sprintf(' \\href{https://doi.org/%s}{[DOI]}', p$doi) else ""
@@ -181,7 +213,8 @@ fmt_pub <- function(p) {
     }
   )
 
-  sprintf("%s. %s. %s%s\n\n", authors, year, body, doi_link)
+  sprintf("%s. %s. %s%s\n\n%s", authors, year, body, doi_link,
+          fmt_translations(p$key))
 }
 
 for (t in types) {

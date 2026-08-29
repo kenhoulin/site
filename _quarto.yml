@@ -20,24 +20,23 @@ website:
   navbar:
     pinned: true
     background: light
+    # All items sit left so they read in this order; the right slot holds only
+    # Quarto's own theme toggle and search.
     left:
-      - href: index.qmd
-        text: About
-      - text: Books
-        href: index.qmd#books
       - text: Research
         href: index.qmd#research
-      - text: Biography
+      - text: Books
+        href: index.qmd#books
+      - text: Bio
         href: index.qmd#bio
-      - text: Contact
-        href: index.qmd#contact
       - text: CV
         href: KHL_CV.pdf
         target: _blank
-    right:
       - text: Google Scholar
         href: "https://scholar.google.com/citations?user=4rlcdG0AAAAJ&hl=en"
         target: _blank
+      - text: Contact
+        href: index.qmd#contact
   page-footer:
     center: "Ken-Hou Lin"
 

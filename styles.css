@@ -281,6 +281,10 @@ main.content,
   color: var(--ink-soft);
   margin-top: 0.9rem;
 }
+/* The award line and the editions list stack into a single bordered block:
+   both carry the same left rule, and the note drops its bottom margin so the
+   join is seamless. Kept as sibling <p> + <ul> rather than one wrapper <div>
+   — a <p> nested inside a div would be recaptured by `.section-light p`. */
 .book-meta .book-note {
   font-size: 0.9rem;
   line-height: 1.55;
@@ -289,6 +293,41 @@ main.content,
   margin-top: 0.75rem;
   padding-left: 0.9rem;
   border-left: 2px solid var(--rule);
+}
+.book-meta .book-note:has(+ .book-editions) { padding-bottom: 0.3rem; }
+
+.book-meta .book-editions {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  margin-top: 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rule);
+  list-style: none;
+}
+.book-editions li {
+  position: relative;
+  padding-left: 0.85rem;
+}
+.book-editions li + li { margin-top: 0.3rem; }
+/* Understated dot rather than a list marker — the left rule already carries
+   most of the visual grouping, so a full bullet reads as too much weight. */
+.book-editions li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ink-muted);
+}
+/* Charter and the other Latin body faces carry no CJK glyphs, so the original
+   titles would otherwise fall to whatever the browser picks. Ask for a Song
+   face first to match the serif body text. */
+.book-editions [lang^="zh"] {
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", "Songti SC",
+               "Noto Serif SC", "SimSun", serif;
 }
 .book-meta .book-links {
   margin-top: 1rem;
@@ -318,27 +357,18 @@ main.content,
   .book-cover { max-width: 160px; }
 }
 
-/* ── Selected honors (year left / honor right) ──────────────── */
-/* Both this and .honors are direct section children, so each must keep the
-   auto side-margins that centre the column — see the note on .honors below. */
-.honors-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  max-width: var(--maxw);
-  margin: 3rem auto 0;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rule);
-}
-/* `margin: … 0 0` here would cancel the auto side-margins that centre every
-   other section child, pushing the list to the gutter. Keep them auto. */
+/* ── Honors / elected positions (year left, entry right) ────── */
+/* Shared by the Selected Honors and Elected Positions sections, which are now
+   both top-level sections with their own h2 — the standalone `.honors-label`
+   this list used to sit under is gone.
+   `margin: … 0 0` here would cancel the auto side-margins that centre every
+   other section child, pushing the list into the gutter. Keep them auto; the
+   h2 above already supplies the space below itself. */
 .honors {
   display: grid;
   grid-template-columns: 92px 1fr;
   gap: 0.9rem 1.75rem;
-  margin: 1.5rem auto 0;
+  margin: 0 auto;
 }
 .honors dt {
   font-size: 0.82rem;

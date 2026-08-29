@@ -1,0 +1,18 @@
+# translations.yml — translated editions, keyed by BibTeX citation key in
+# publications/publications.bib. Rendered by cv.qmd as sub-items under the
+# book entry; `script` picks the CJK font family declared in the LaTeX
+# template (tc = \cjktc, sc = \cjksc). Entries with no script render in the
+# body font.
+lin2020divested:
+  - language: Traditional Chinese
+    year: 2021
+    title: 大逆轉：金融擴張如何推升不平等
+    city: Taipei
+    publisher: 春山
+    script: tc
+  - language: Simplified Chinese
+    year: 2024
+    title: 金融化与不平等（政治经济学文库）
+    city: Beijing
+    publisher: 中国人民大学出版社
+    script: sc
