@@ -148,23 +148,14 @@ vip_string <- function(p) {
   ""
 }
 
-# Wrap a string in the CJK font family named by `script` (tc/sc → \cjktc/\cjksc,
-# declared in assets/cv-template.tex). Charter has no CJK glyphs, so text left
-# in the body font would silently drop out of the PDF.
-cjk <- function(s, script) {
-  s <- ltx(s)
-  if (is.null(script) || !nzchar(script)) return(s)
-  sprintf("{\\cjk%s %s}", script, s)
-}
-
 # Translated editions hang off the book entry as sub-items.
 fmt_translations <- function(key) {
   eds <- translations[[key]]
   if (is.null(eds) || !length(eds)) return("")
   items <- vapply(eds, function(e) sprintf(
-    "\\item %s edition (%s): %s. %s: %s.",
+    "\\item %s edition (%s). %s: %s.",
     ltx(e$language), ltx(as.character(e$year)),
-    cjk(e$title, e$script), ltx(e$city), cjk(e$publisher, e$script)),
+    ltx(e$city), ltx(e$publisher)),
     character(1))
   paste0(
     "\n```{=latex}\n",
