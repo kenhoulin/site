@@ -7,18 +7,11 @@
 \usepackage[margin=1in]{geometry}
 
 % ── Fonts (XeLaTeX) ──────────────────────────────────────────────────────────
-% The engine is xelatex, not pdflatex, so that the translated-edition titles in
-% the Books section can be set in their original scripts. fontenc/inputenc are
-% pdflatex-only and must stay out; XeTeX reads the source as UTF-8 natively.
+% The engine is xelatex, not pdflatex: fontspec and XCharter load the OTF
+% faces directly. fontenc/inputenc are pdflatex-only and must stay out;
+% XeTeX reads the source as UTF-8 natively.
 \usepackage{fontspec}
 \usepackage{XCharter}            % Charter serif; loads its OTF under XeTeX
-% XCharter.sty leaves \defaultfontfeatures{Extension=.otf, ...} in force, which
-% would send the lookups below hunting for "PMingLiU.otf" in texmf instead of
-% for the installed system font. Clear it — XCharter's own faces are already
-% defined by this point, so nothing above is affected.
-\defaultfontfeatures{}
-\newfontfamily\cjktc{PMingLiU}   % Traditional Chinese (Song face, pairs with Charter)
-\newfontfamily\cjksc{SimSun}     % Simplified Chinese (Song face)
 
 \usepackage[dvipsnames,svgnames,x11names]{xcolor}
 \usepackage{hyperref}

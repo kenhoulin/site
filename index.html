@@ -203,6 +203,8 @@ ul.task-list li input[type="checkbox"] {
         <li>Simplified Chinese edition (2024):
           <span lang="zh-Hans">金融化与不平等（政治经济学文库）</span>.
           Beijing: <span lang="zh-Hans">中国人民大学出版社</span>.</li>
+        <li>Russian edition (forthcoming).
+          Boston: Academic Studies Press.</li>
       </ul>
       <p class="book-links">
         <a href="https://global.oup.com/academic/product/divested-9780190638313" target="_blank" rel="noopener">Publisher</a>
@@ -366,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/kenhoulin\.info");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
