@@ -16,6 +16,7 @@ project:
 
 website:
   title: "Ken-Hou Lin"
+  site-url: "https://kenhoulin.info"
   favicon: assets/favicon.png
   navbar:
     pinned: true
@@ -46,3 +47,4 @@ format:
     css: styles.css
     toc: false
     anchor-sections: false   # no hover link-icons on headings (one-page site)
+    include-in-header: leadfeeder.html
